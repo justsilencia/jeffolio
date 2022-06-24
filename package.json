@@ -1,0 +1,46 @@
+{
+  "name": "jeffolio",
+  "private": true,
+  "description": "My portfolio site, built with GatsbyJs and ThreeJs (hopefully!...)",
+  "version": "1.0.0",
+  "author": "Me",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@react-three/drei": "^9.13.2",
+    "@react-three/fiber": "^8.0.27",
+    "bootstrap-scss": "^4.6.1",
+    "gatsby": "^4.17.0",
+    "gatsby-plugin-gatsby-cloud": "^4.17.0",
+    "gatsby-plugin-image": "^2.16.1",
+    "gatsby-plugin-manifest": "^4.17.0",
+    "gatsby-plugin-offline": "^5.17.0",
+    "gatsby-plugin-react-helmet": "^5.17.0",
+    "gatsby-plugin-sass": "^5.17.0",
+    "gatsby-plugin-sharp": "^4.17.0",
+    "gatsby-source-filesystem": "^4.17.0",
+    "gatsby-transformer-sharp": "^4.17.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-rating": "^2.0.5",
+    "sass": "^1.53.0",
+    "three": "^0.141.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  }
+}

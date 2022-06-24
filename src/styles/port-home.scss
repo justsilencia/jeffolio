@@ -1,0 +1,140 @@
+
+.port-home-container {
+    padding: 0 auto;
+}
+
+.port-skills-links {
+    margin-top: 4em;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        list-style-type: none;
+        padding: 0;
+        li {
+            padding: 10px;
+            img {
+                flex: auto;
+                width: 80px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+            }
+            img:hover {
+                transform: scale(1.1);
+            }
+            span {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.drop-skill {
+    text-align: center;
+    img {
+        width: 130px;
+    }
+    h3, h1 { color: black; }
+}
+
+.img-grow {
+    animation: grow 0.3s;
+}
+
+.skill-summary-scroll {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 10px;
+    height: 42vh;
+    overflow: hidden;
+}
+
+.skill-summary {
+    margin: 0 auto;
+    padding: 0 1em;
+    font-size: 1.25em;
+    p, div {
+        text-align: justify;
+        text-indent: 30px;
+    }
+    .concepts {
+        color: black;
+        font-size: 1.2em;
+    }
+}
+
+.choose-skill {
+    margin-top: 3em;
+    width: 15em;
+    height: 15em;
+    path { fill: #58a; }
+    svg {
+        display: block;
+        overflow: visible;
+        text { 
+            font-family: $headings-font-family;
+            text-shadow: 1px 1px black,
+                         2px 2px black,
+                         3px 3px black,
+                         4px 4px black; 
+        }
+    }
+    animation: spin 12s infinite linear;
+}
+
+@keyframes spin {
+    to { transform: rotate(1turn); }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0);
+    }
+    70% {
+        transform: scale(1.1);
+        animation-timing-function: cubic-bezier(.1, .25, 1, .25);
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .port-skills-links {
+        ul {
+            li {
+                img {
+                    width: 50px;
+                }
+            }
+        }
+    }
+    .skill-summary-scroll {
+        width: 100%;
+        height: 42vh;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .skill-summary-scroll {
+        width: 100%;
+        height: 42vh;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .skill-summary-scroll {
+        width: 100%;
+        height: 42vh;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .skill-summary-scroll {
+        width: 60%;
+        height: 42vh;
+    }
+}
+
