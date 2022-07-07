@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useLoader, useFrame } from "@react-three/fiber";
+import { useLoader, useFrame, useThree } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const GltfModel = ({ modelPath, scale }) => {
@@ -7,11 +7,15 @@ const GltfModel = ({ modelPath, scale }) => {
   const gltf = useLoader(GLTFLoader, modelPath);
 
   // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame(({ camera }) => {
-    ref.current.rotation.y += 0.001;
-    camera.position.x = 0;
-    camera.position.y = 8;
-    camera.position.z = 0;
+  useFrame(() => {
+    //ref.current.rotation.y += 0.001;
+    // ref.current.rotation.y += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
+    // ref.current.rotation.z += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
+    // ref.current.rotation.x += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
+  });
+
+  useThree(({camera}) => {
+    camera.position.y = 60;
     camera.lookAt(0, 0, 0);
   });
 

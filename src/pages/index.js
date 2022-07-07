@@ -30,49 +30,49 @@ const IndexPage = () => {
   const [skillElements, setSkillElements] = useState([
     {
         id: 'HTML5',
-        imgSrc: '../images/html5.png',
+        modelSrc: '/models/html-3d.glb',
         visible: true,
         skillComp: <HTML5 />
     },
     {
         id: 'CSS3',
-        imgSrc: '../images/css3.png',
+        modelSrc: '/models/css-3d.glb',
         visible: true,
         skillComp: <CSS3 />
     },
     {
         id: 'Javascript',
-        imgSrc: '../images/javascript.png',
+        modelSrc: '/models/javascript-3d.glb',
         visible: true,
         skillComp: <Javascript />
     },
     {
         id: 'NodeJs',
-        imgSrc: '../images/nodejs.png',
+        modelSrc: '/models/node-3d.glb',
         visible: true,
         skillComp: <Nodejs />
     },
     {
         id: 'ReactJs',
-        imgSrc: '../images/reactjs.png',
+        modelSrc: '/models/react-3d.glb',
         visible: true,
         skillComp: <Reactjs />
     },
     {
         id: 'Mongodb',
-        imgSrc: '../images/mongodb.png',
+        modelSrc: '/models/mongo-3d.glb',
         visible: true,
         skillComp: <Mongodb />
     },
     {
         id: 'ASP.NET',
-        imgSrc: '../images/asp.net.png',
+        modelSrc: '/models/aspnet-3d.glb',
         visible: true,
         skillComp: <ASPNET />
     },
     {
         id: 'SQL',
-        imgSrc: '../images/SQL.png',
+        modelSrc: '/models/sql-3d.glb',
         visible: true,
         skillComp: <SQL />
     }
@@ -116,7 +116,7 @@ const IndexPage = () => {
   skillElements.forEach((skill, i) => {
     if (skill.visible) {
         renderSkills.push((
-          <SkillElement />
+          <li><SkillElement skillTxt={skill.id} mScale={"6.5"} mPath={skill.modelSrc} /></li>
         ))
     }
   });
@@ -129,14 +129,7 @@ const IndexPage = () => {
                 <div className="col-lg-12">
                     <div className="port-skills-links">
                         <ul>
-                          <li>
-                            <SkillElement mScale={"1.5"} mPath={"/models/node-3d.glb"} />
-                          </li>
-                          <li>
-                            <SkillElement mScale={"1.2"} mPath={"/models/javascript-3d.glb"} />
-                          </li>
-                            
-                            {/*renderSkills? renderSkills : ''*/}
+                            {renderSkills? renderSkills : ''}
                         </ul>
                     </div>
                 </div>
