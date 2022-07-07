@@ -116,7 +116,7 @@ const IndexPage = () => {
   skillElements.forEach((skill, i) => {
     if (skill.visible) {
         renderSkills.push((
-          <li><SkillElement skillTxt={skill.id} mScale={"6.5"} mPath={skill.modelSrc} /></li>
+          <SkillElement key={i} skillTxt={skill.id} mScale={"9.5"} mPath={skill.modelSrc} />
         ))
     }
   });

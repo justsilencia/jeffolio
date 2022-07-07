@@ -15,7 +15,7 @@ const GltfModel = ({ modelPath, scale }) => {
   });
 
   useThree(({camera}) => {
-    camera.position.y = 60;
+    camera.position.y = 80;
     camera.lookAt(0, 0, 0);
   });
 

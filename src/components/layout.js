@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
         <SkillNetworks />
         <div className='powered-by'>
             <div>Powered by</div>
-            <StaticImage src='../images/pern.png' alt='Powered by SERN stack.' />
+            <StaticImage imgStyle={{ objectFit: 'contain' }} src='../images/pern.png' alt='Powered by SERN stack.' />
         </div>
         <div className='app container'>
           { children }
