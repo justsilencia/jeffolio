@@ -9,7 +9,7 @@ const GltfModel = ({ modelPath, scale }) => {
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame(() => {
     //ref.current.rotation.y += 0.001;
-    // ref.current.rotation.y += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
+    //ref.current.rotation.y += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
     // ref.current.rotation.z += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
     // ref.current.rotation.x += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
   });

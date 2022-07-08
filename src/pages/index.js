@@ -75,6 +75,12 @@ const IndexPage = () => {
         modelSrc: '/models/sql-3d.glb',
         visible: true,
         skillComp: <SQL />
+    },
+    {
+      id: 'Next.Js',
+      modelSrc: '/models/nextjs-3d.glb',
+      visible: true,
+      skillComp: <SQL />
     }
   ]);
 
