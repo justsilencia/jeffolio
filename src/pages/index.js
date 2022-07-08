@@ -77,10 +77,16 @@ const IndexPage = () => {
         skillComp: <SQL />
     },
     {
-      id: 'Next.Js',
-      modelSrc: '/models/nextjs-3d.glb',
-      visible: true,
-      skillComp: <SQL />
+        id: 'Next.Js',
+        modelSrc: '/models/nextjs-3d.glb',
+        visible: true,
+        skillComp: <SQL />
+    },
+    {
+        id: 'Next.Js',
+        modelSrc: '/models/gatsby-3d.glb',
+        visible: true,
+        skillComp: <SQL />
     }
   ]);
 
