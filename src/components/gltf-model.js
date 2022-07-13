@@ -1,15 +1,31 @@
-import React, { useRef } from "react";
-import { useLoader, useFrame, useThree } from "@react-three/fiber";
+import React, { useRef, useState } from "react";
+import { useLoader, useFrame, useThree, reconciler } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-const GltfModel = ({ modelPath, scale }) => {
+const GltfModel = ({ modelPath, scale, animate }) => {
+
   const ref = useRef();
   const gltf = useLoader(GLTFLoader, modelPath);
 
-  // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame(() => {
-    //ref.current.rotation.y += 0.001;
-    //ref.current.rotation.y += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
+    
+    if (animate.scale.growActive === true) {
+      if (ref.current.scale.x < animate.scale.growScale[0]) {
+        ref.current.scale.x += .5;
+        ref.current.scale.z += .5;
+      }
+    }
+    if (animate.scale.shrinkActive === true) {
+      if (ref.current.scale.x > animate.scale.shrinkScale[0]) {
+        ref.current.scale.x -= .5;
+        ref.current.scale.z -= .5;
+      }
+    }
+    
+    // ref.current.rotation.y += 0.001;
+    // ref.current.scale.x += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
+    // ref.current.scale.z += Math.sin(Date.now() * 0.005) * Math.PI * 0.005;
+    // ref.current.rotation.y += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
     // ref.current.rotation.z += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
     // ref.current.rotation.x += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
   });
@@ -21,11 +37,12 @@ const GltfModel = ({ modelPath, scale }) => {
 
   return (
     <>
-      <primitive
-        ref={ref}
-        object={gltf.scene}
-        scale={scale}
-      />
+        <primitive
+          ref={ref}
+          object={gltf.scene}
+          scale={scale}
+        />
+     
     </>
   );
 };

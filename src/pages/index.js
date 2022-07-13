@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 //import { Link } from "gatsby"
-import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import Scrollbar from 'react-perfect-scrollbar';
-import "react-perfect-scrollbar/dist/css/styles.css";
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 // Skill components...
 import HTML5 from '../components/skills/html5';
@@ -83,7 +82,7 @@ const IndexPage = () => {
         skillComp: <SQL />
     },
     {
-        id: 'Next.Js',
+        id: 'Gatsby.Js',
         modelSrc: '/models/gatsby-3d.glb',
         visible: true,
         skillComp: <SQL />
@@ -128,7 +127,7 @@ const IndexPage = () => {
   skillElements.forEach((skill, i) => {
     if (skill.visible) {
         renderSkills.push((
-          <SkillElement key={i} skillTxt={skill.id} mScale={"9.5"} mPath={skill.modelSrc} />
+          <SkillElement key={i} skillTxt={skill.id} scale={[9.5, 9.5, 9.5]} mPath={skill.modelSrc} />
         ))
     }
   });
