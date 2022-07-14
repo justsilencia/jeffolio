@@ -102,35 +102,41 @@ const IndexPage = () => {
 }
 
   const clickSkill = (index) => {
-
+    
     let skillArr = [];
     skillElements.forEach((skillEl, i) => {
         skillArr.push(skillEl);
         skillArr[i].visible = (index !== i) ? true : false;
     });
    
-  skillArr[index].visible = false;
-  setSkillElements({skillElements: skillArr, 
-                   chosenSkill: 
-                        {
-                            imgSrc: skillArr[index].imgSrc,
-                            skillName: skillArr[index].id,
-                            visible: true,
-                            animate: true,
-                            skillComp: skillArr[index].skillComp
-                        }
-                    });
+  //skillArr[index].visible = false;
+  setSkillElements(skillArr);
+    
+    //{skillElements: skillArr,
+                  //  chosenSkill: 
+                  //       {
+                  //           imgSrc: skillArr[index].imgSrc,
+                  //           skillName: skillArr[index].id,
+                  //           visible: true,
+                  //           animate: true,
+                  //           skillComp: skillArr[index].skillComp
+                  //       }
+                  //   });
   }
 
   let renderSkills = [];
-
-  skillElements.forEach((skill, i) => {
-    if (skill.visible) {
-        renderSkills.push((
-          <SkillElement key={i} skillTxt={skill.id} scale={[9.5, 9.5, 9.5]} mPath={skill.modelSrc} />
-        ))
-    }
-  });
+  
+  console.log(skillElements);
+  if (skillElements.length > 0) {
+    skillElements.forEach((skill, i) => {
+      if (skill.visible) {
+          renderSkills.push((
+            <SkillElement clickEvent={clickSkill} key={i} index={i} skillTxt={skill.id} scale={[7, 7, 7]} mPath={skill.modelSrc} />
+          ))
+      }
+    });
+  }
+  
 
   return (
     <Layout>

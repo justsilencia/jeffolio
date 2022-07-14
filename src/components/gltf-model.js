@@ -9,16 +9,23 @@ const GltfModel = ({ modelPath, scale, animate }) => {
 
   useFrame(() => {
     
+    // Grow scale, and rotate on z axis.
     if (animate.scale.growActive === true) {
       if (ref.current.scale.x < animate.scale.growScale[0]) {
-        ref.current.scale.x += .5;
-        ref.current.scale.z += .5;
+        ref.current.scale.x += .25;
+        ref.current.scale.z += .25;
       }
+      ref.current.rotation.z += .02;
     }
+
+    // Shrink scale, and bring z axis position back to 0.
     if (animate.scale.shrinkActive === true) {
+      ref.current.rotation.z = 0;
       if (ref.current.scale.x > animate.scale.shrinkScale[0]) {
-        ref.current.scale.x -= .5;
-        ref.current.scale.z -= .5;
+        ref.current.scale.x -= .25;
+      }
+      if (ref.current.scale.z > animate.scale.shrinkScale[2]) {
+        ref.current.scale.z -= .25;
       }
     }
     

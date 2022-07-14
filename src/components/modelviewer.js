@@ -7,7 +7,7 @@ export default function ModelViewer({ modelPath, animate, scale }) {
 
 
   return (
-    <div style={{ width: "120px", height: "120px" }}>
+    <div style={{ width: "150px", height: "150px" }}>
         <Canvas>
             
             

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import ModelViewer from './modelviewer';
 
-export default function SkillElement({ mPath, scale, skillTxt }) {
+export default function SkillElement({ mPath, scale, skillTxt, clickEvent, index }) {
 
     const [animateParams, setAnimateParams] = useState({
         scale: {
             initialScale: scale,
             growActive: false,
             shrinkActive: false,
-            growScale: scale.map(axis => axis + 2),
+            growScale: scale.map(axis => axis + .5),
             shrinkScale: scale
         }
     });
@@ -25,7 +25,9 @@ export default function SkillElement({ mPath, scale, skillTxt }) {
                 prevState.scale.growActive = false;
                 return prevState;
             });
-        }}>
+        }}
+        onClick={() => clickEvent(index)}
+        >
             <ModelViewer animate={animateParams} scale={scale} modelPath={mPath} />
             <span>{skillTxt}</span>
         </li>
