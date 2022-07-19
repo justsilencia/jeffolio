@@ -14,12 +14,14 @@ import Reactjs from '../components/skills/reactjs';
 import SQL from '../components/skills/sql';
 import Mongodb from '../components/skills/mongodb';
 import ASPNET from '../components/skills/aspnet';
-import SkillElement from "../components/skillelement";
+import SkillElement from '../components/skillelement';
+
+import {SphereCanvas} from '../components/3d-models/sphere-texture';
 
 const IndexPage = () => {
 
   const [chosenSkill, setChosenSkill] = useState({
-    imgSrc: '',
+    modelSrc: '',
     skillName: '',
     visible: false,
     animate: false,
@@ -89,17 +91,17 @@ const IndexPage = () => {
     }
   ]);
 
-  const animationEnd = () => {
-    setChosenSkill(prevState => ({
-        chosenSkill: {
-            imgSrc: prevState.chosenSkill.imgSrc, 
-            skillName: prevState.chosenSkill.skillName,
-            visible: true, 
-            animate: false,
-            skillComp: prevState.chosenSkill.skillComp
-        }
-    }));
-}
+//   const animationEnd = () => {
+//     setChosenSkill(prevState => ({
+//         chosenSkill: {
+//             imgSrc: prevState.chosenSkill.imgSrc, 
+//             skillName: prevState.chosenSkill.skillName,
+//             visible: true, 
+//             animate: false,
+//             skillComp: prevState.chosenSkill.skillComp
+//         }
+//     }));
+// }
 
   const clickSkill = (index) => {
     
@@ -109,24 +111,19 @@ const IndexPage = () => {
         skillArr[i].visible = (index !== i) ? true : false;
     });
    
-  //skillArr[index].visible = false;
-  setSkillElements(skillArr);
-    
-    //{skillElements: skillArr,
-                  //  chosenSkill: 
-                  //       {
-                  //           imgSrc: skillArr[index].imgSrc,
-                  //           skillName: skillArr[index].id,
-                  //           visible: true,
-                  //           animate: true,
-                  //           skillComp: skillArr[index].skillComp
-                  //       }
-                  //   });
+    setSkillElements(skillArr);
+    setChosenSkill({
+                      modelSrc: skillArr[index].modelSrc,
+                      skillName: skillArr[index].id,
+                      visible: true,
+                      animate: true,
+                      skillComp: skillArr[index].skillComp
+                  });
   }
 
   let renderSkills = [];
   
-  console.log(skillElements);
+ 
   if (skillElements.length > 0) {
     skillElements.forEach((skill, i) => {
       if (skill.visible) {
@@ -159,6 +156,7 @@ const IndexPage = () => {
 
                               <>
                                   <h1>{chosenSkill.skillName}</h1>
+                                  <SphereCanvas />
                               </>
                             : ''
                         }
@@ -172,14 +170,10 @@ const IndexPage = () => {
                                 </Scrollbar>
                             </div> : 
                             <div className="choose-skill">
-                                <svg viewBox="0 0 100 100">
-                                    <path d="M 0, 50 a 50, 50 0 1, 1 0, 1 z" id="circle" />
-                                    <text fill="#fff">
-                                        <textPath xlinkHref="#circle">
-                                            CHOOSE A SKILL!
-                                        </textPath>
-                                    </text>
-                                </svg>
+                              <SphereCanvas />
+                              <textPath xlinkHref="#circle">
+                                CHOOSE A SKILL!
+                              </textPath>
                             </div>
                         }
                     </div>
