@@ -15,10 +15,11 @@ import SQL from '../components/skills/sql';
 import Mongodb from '../components/skills/mongodb';
 import ASPNET from '../components/skills/aspnet';
 import SkillElement from '../components/skillelement';
+import SkillElement2 from "../components/3d-models/SkillElement";
 
 import SphereCollage from '../components/3d-models/SphereCollage';
 import GatsbyModel from '../components/3d-models/Gatsby-3d';
-import ModelViewer from "../components/3d-models/ModelViewer";
+import SkillModelViewer from "../components/3d-models/SkillModelViewer";
 
 const IndexPage = () => {
 
@@ -90,6 +91,7 @@ const IndexPage = () => {
         modelSrc: '/models/gatsby-3d.glb',
         visible: true,
         skillComp: <SQL />,
+        skillModel: <GatsbyModel />,
         chosenComp: <GatsbyModel />
     }
   ]);
@@ -141,6 +143,8 @@ const IndexPage = () => {
                 </div>
             </div>
             <div className="row">
+              {/* Testing the new SkillElement component!!! */}
+              <SkillElement2 SkillModel={GatsbyModel} animateMode={1} scale={[1,1,1]} />
                 <div className="col-lg-12 d-flex justify-content-center mt-3">
                     <div className="drop-skill">
                         { 
@@ -149,9 +153,9 @@ const IndexPage = () => {
                               <>
                                   <h1>{chosenSkill.skillName}</h1>
                                   <div id="chosen-model">
-                                    <ModelViewer>
+                                    <SkillModelViewer>
                                       { chosenSkill.chosenComp }
-                                    </ModelViewer>
+                                    </SkillModelViewer>
                                   </div>
                               </>
                             : ''

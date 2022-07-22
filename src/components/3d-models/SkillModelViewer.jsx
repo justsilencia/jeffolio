@@ -2,7 +2,7 @@ import React from 'react';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from 'react';
 
-export default function ModelViewer({children, width, height}) {
+export default function SkillModelViewer({children, width, height}) {
 
     
 
