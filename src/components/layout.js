@@ -9,10 +9,10 @@ const Layout = ({ children }) => {
     <div className='content-outer' id='outer-container'>
       <main className='content-wrap' id='page-wrap'>
         <SkillNetworks />
-        <div className='powered-by'>
+        {/* <div className='powered-by'>
             <div>Powered by</div>
             <StaticImage imgStyle={{ objectFit: 'contain' }} src='../images/pern.png' alt='Powered by SERN stack.' />
-        </div>
+        </div> */}
         <div className='app container'>
           { children }
         </div>

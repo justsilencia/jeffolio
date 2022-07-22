@@ -36,7 +36,9 @@
         width: 130px;
     }
     h3, h1 { color: black; }
+    #chosen-model { display: inline-block; }
 }
+
 
 .img-grow {
     animation: grow 0.3s;
@@ -68,19 +70,6 @@
     margin-top: 3em;
     width: 15em;
     height: 15em;
-    path { fill: #58a; }
-    svg {
-        display: block;
-        overflow: visible;
-        text { 
-            font-family: $headings-font-family;
-            text-shadow: 1px 1px black,
-                         2px 2px black,
-                         3px 3px black,
-                         4px 4px black; 
-        }
-    }
-    animation: spin 12s infinite linear;
 }
 
 @keyframes spin {

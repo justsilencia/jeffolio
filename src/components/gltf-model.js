@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { useLoader, useFrame, useThree, reconciler } from "@react-three/fiber";
+import React, { useRef } from "react";
+import { useLoader, useFrame, useThree } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const GltfModel = ({ modelPath, scale, animate }) => {
@@ -28,13 +28,6 @@ const GltfModel = ({ modelPath, scale, animate }) => {
         ref.current.scale.z -= .25;
       }
     }
-    
-    // ref.current.rotation.y += 0.001;
-    // ref.current.scale.x += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
-    // ref.current.scale.z += Math.sin(Date.now() * 0.005) * Math.PI * 0.005;
-    // ref.current.rotation.y += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
-    // ref.current.rotation.z += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
-    // ref.current.rotation.x += Math.sin(Date.now() * 0.01) * Math.PI * 0.01;
   });
 
   useThree(({camera}) => {

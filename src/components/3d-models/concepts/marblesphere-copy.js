@@ -23,8 +23,8 @@ const Sphere = () => {
   const [base, bump, normal, ao, metal, rough] = useLoader(
     THREE.TextureLoader,
     [
+      "/textures/wrap5.jpg",
       "/textures/glass/marble-texture-1.jpg",
-      "/textures/glass/glass-texture-1.jpg",
       "/textures/glass/glass-texture-2.jpg",
       "/textures/laced-metal/metal1_ambientOcclusion.jpg",
       "/textures/laced-metal/metal1_metallic.jpg",
@@ -45,14 +45,9 @@ const Sphere = () => {
 
   return (
     <mesh ref={sphereRef}>
-      <sphereGeometry args={[3, 36, 36]} />
+      <sphereGeometry args={[2.75, 40, 40]} />
       <meshPhysicalMaterial
         map={base}
-        bumpMap={bump}
-        aoMap={ao}
-        normalMap={normal}
-        metalnessMap={metal}
-        roughnessMap={rough}
       />
     </mesh>
   );
@@ -61,13 +56,12 @@ const Sphere = () => {
 
 export const SphereCanvas = () => {
   return (
-    <Canvas style={{ height: 220, width: 220 }}>
-      <pointLight position={[5, 10, -10]} intensity={1} />
-      <pointLight position={[-3, 0, 10]} intensity={1} />
+    <Canvas style={{ height: 250, width: 250 }}>
+      <ambientLight intensity={.5} />
       <Suspense fallback={null}>
         <Sphere />
       </Suspense>
-      <OrbitControls />
+      <OrbitControls enableZoom={false} />
     </Canvas>
   );
 };

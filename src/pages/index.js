@@ -16,7 +16,9 @@ import Mongodb from '../components/skills/mongodb';
 import ASPNET from '../components/skills/aspnet';
 import SkillElement from '../components/skillelement';
 
-import {SphereCanvas} from '../components/3d-models/sphere-texture';
+import SphereCollage from '../components/3d-models/SphereCollage';
+import GatsbyModel from '../components/3d-models/Gatsby-3d';
+import ModelViewer from "../components/3d-models/ModelViewer";
 
 const IndexPage = () => {
 
@@ -87,21 +89,10 @@ const IndexPage = () => {
         id: 'Gatsby.Js',
         modelSrc: '/models/gatsby-3d.glb',
         visible: true,
-        skillComp: <SQL />
+        skillComp: <SQL />,
+        chosenComp: <GatsbyModel />
     }
   ]);
-
-//   const animationEnd = () => {
-//     setChosenSkill(prevState => ({
-//         chosenSkill: {
-//             imgSrc: prevState.chosenSkill.imgSrc, 
-//             skillName: prevState.chosenSkill.skillName,
-//             visible: true, 
-//             animate: false,
-//             skillComp: prevState.chosenSkill.skillComp
-//         }
-//     }));
-// }
 
   const clickSkill = (index) => {
     
@@ -117,7 +108,8 @@ const IndexPage = () => {
                       skillName: skillArr[index].id,
                       visible: true,
                       animate: true,
-                      skillComp: skillArr[index].skillComp
+                      skillComp: skillArr[index].skillComp,
+                      chosenComp: skillArr[index].chosenComp
                   });
   }
 
@@ -156,7 +148,11 @@ const IndexPage = () => {
 
                               <>
                                   <h1>{chosenSkill.skillName}</h1>
-                                  <SphereCanvas />
+                                  <div id="chosen-model">
+                                    <ModelViewer>
+                                      { chosenSkill.chosenComp }
+                                    </ModelViewer>
+                                  </div>
                               </>
                             : ''
                         }
@@ -170,10 +166,7 @@ const IndexPage = () => {
                                 </Scrollbar>
                             </div> : 
                             <div className="choose-skill">
-                              <SphereCanvas />
-                              <textPath xlinkHref="#circle">
-                                CHOOSE A SKILL!
-                              </textPath>
+                              <SphereCollage />
                             </div>
                         }
                     </div>
