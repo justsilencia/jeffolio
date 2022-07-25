@@ -30,7 +30,8 @@ const IndexPage = () => {
     skillName: '',
     visible: false,
     animate: false,
-    skillComp: ''
+    skillComp: '',
+    skillModel: ''
   });
 
   const [skillElements, setSkillElements] = useState([
@@ -121,7 +122,7 @@ const IndexPage = () => {
                       visible: true,
                       animate: true,
                       skillComp: skillArr[index].skillComp,
-                      chosenComp: skillArr[index].chosenComp
+                      skillModel: skillArr[index].skillModel
                   });
   }
 
@@ -160,7 +161,7 @@ const IndexPage = () => {
             </div>
             <div className="row">
               {/* Testing the new SkillElement and ChosenSkill components!!! */}
-              {/* <ChosenSkill SkillModel={GatsbyModel} scale={[1,1,1]} /> */}
+              {/* <ChosenSkill SkillModel={ThreeModels.Gatsby3d} scale={[13,13,13]} /> */}
               {/* <SkillElement SkillModel={ThreeModels.Gatsby3d} scale={[1,1,1]} /> */}
                 <div className="col-lg-12 d-flex justify-content-center mt-3">
                     <div className="drop-skill">
@@ -169,9 +170,7 @@ const IndexPage = () => {
                               <>
                                   <h1>{chosenSkill.skillName}</h1>
                                   <div id="chosen-model">
-                                    <SkillModelViewer>
-                                      { chosenSkill.chosenComp }
-                                    </SkillModelViewer>
+                                    <ChosenSkill SkillModel={chosenSkill.skillModel} scale={[12,12,12]} />
                                   </div>
                               </>
                             : ''

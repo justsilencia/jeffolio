@@ -4,8 +4,6 @@ import { Suspense } from 'react';
 
 export default function SkillModelViewer({children, width, height }) {
 
-    
-
     return (
         <div style={{ width: width, height: height }}>
             <Canvas>
