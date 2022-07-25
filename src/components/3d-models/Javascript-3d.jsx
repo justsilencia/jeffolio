@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useThree, useFrame } from '@react-three/fiber';
-import AnimateHover from './AnimateHover';
-import modelMods from './modelMods';
+import AnimateHover from './utils/AnimateHover';
+import modelMods from './utils/modelMods';
 
 export default function Javascript3d(props) {
   
   const modelRef = useRef();
-  const { nodes, materials } = useGLTF('/javascript-3d.glb');
+  const { nodes, materials } = useGLTF('/models/javascript-3d.glb');
 
   useThree(({camera}) => {
     camera.position.y = modelMods.cameraY;
@@ -28,4 +28,4 @@ export default function Javascript3d(props) {
   )
 }
 
-useGLTF.preload('/javascript-3d.glb')
+useGLTF.preload('/models/javascript-3d.glb');

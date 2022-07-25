@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SkillModelViewer from './SkillModelViewer';
 
-export default function SkillElement2({ SkillModel, scale, skillTxt, clickEvent, index }) {
+export default function SkillElement({ SkillModel, scale, skillTxt, clickEvent, index, width, height }) {
 
     const [animateParams, setAnimateParams] = useState({
         scale: {
@@ -29,8 +29,8 @@ export default function SkillElement2({ SkillModel, scale, skillTxt, clickEvent,
         }}
         onClick={() => clickEvent(index)}
         >
-            <SkillModelViewer>
-                <SkillModel animateProps={animateParams} scale={scale} />
+            <SkillModelViewer width={width} height={height}>
+                <SkillModel animateProps={animateParams} />
             </SkillModelViewer>
             <span>{skillTxt}</span>
         </li>

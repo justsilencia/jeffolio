@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useThree, useFrame } from '@react-three/fiber';
-import AnimateHover from './AnimateHover';
+import AnimateHover from './utils/AnimateHover';
 import modelMods from './utils/modelMods';
 
 export default function Css3d(props) {
-  const group = useRef()
-  const { nodes, materials } = useGLTF('/css-3d.glb')
+  const modelRef = useRef()
+  const { nodes, materials } = useGLTF('/models/css-3d.glb')
 
   useThree(({camera}) => {
     camera.position.y = modelMods.cameraY;
@@ -21,10 +21,10 @@ export default function Css3d(props) {
   });
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={modelRef} {...props} dispose={null}>
       <mesh geometry={nodes.Curve.geometry} material={materials.SVGMat} scale={13.41} />
     </group>
   )
 }
 
-useGLTF.preload('/css-3d.glb')
+useGLTF.preload('/models/css-3d.glb');

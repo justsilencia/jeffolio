@@ -1,14 +1,14 @@
 import React, { useRef } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useThree, useFrame } from '@react-three/fiber';
-import AnimateHover from './AnimateHover';
-import modelMods from './modelMods';
+import AnimateHover from './utils/AnimateHover';
+import modelMods from './utils/modelMods';
 
 export default function Sql3d(props) {
 
   const modelRef = useRef();
-  const { nodes, materials, animations } = useGLTF('/sql-3d.glb');
-  const { actions } = useAnimations(animations, group);
+  const { nodes, materials, animations } = useGLTF('/models/sql-3d.glb');
+  const { actions } = useAnimations(animations, modelRef);
 
   useThree(({camera}) => {
     camera.position.y = modelMods.cameraY;
@@ -32,4 +32,4 @@ export default function Sql3d(props) {
   )
 }
 
-useGLTF.preload('/sql-3d.glb')
+useGLTF.preload('/models/sql-3d.glb');

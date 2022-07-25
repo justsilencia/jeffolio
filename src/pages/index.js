@@ -16,11 +16,11 @@ import Mongodb from '../components/skills/mongodb';
 import ASPNET from '../components/skills/aspnet';
 
 // 3d Model Components
-import SkillElement from '../components/skillelement';
-import SkillElement2 from "../components/3d-models/SkillElement";
+//import SkillElement from '../components/skillelement';
+import SkillElement from "../components/3d-models/SkillElement";
 import ChosenSkill from "../components/3d-models/ChosenSkill";
 import SphereCollage from '../components/3d-models/SphereCollage';
-import Gatsby3d from '../components/3d-models/Gatsby-3d';
+import * as ThreeModels from '../components/3d-models';
 import SkillModelViewer from "../components/3d-models/SkillModelViewer";
 
 const IndexPage = () => {
@@ -31,70 +31,78 @@ const IndexPage = () => {
     visible: false,
     animate: false,
     skillComp: ''
-  })
+  });
 
   const [skillElements, setSkillElements] = useState([
     {
         id: 'HTML5',
         modelSrc: '/models/html-3d.glb',
         visible: true,
-        skillComp: <HTML5 />
+        skillComp: <HTML5 />,
+        skillModel: ThreeModels.Html3d
     },
     {
         id: 'CSS3',
         modelSrc: '/models/css-3d.glb',
         visible: true,
-        skillComp: <CSS3 />
+        skillComp: <CSS3 />,
+        skillModel: ThreeModels.Css3d
     },
     {
         id: 'Javascript',
         modelSrc: '/models/javascript-3d.glb',
         visible: true,
-        skillComp: <Javascript />
+        skillComp: <Javascript />,
+        skillModel: ThreeModels.Javascript3d
     },
     {
         id: 'NodeJs',
         modelSrc: '/models/node-3d.glb',
         visible: true,
-        skillComp: <Nodejs />
+        skillComp: <Nodejs />,
+        skillModel: ThreeModels.Node3d
     },
     {
         id: 'ReactJs',
         modelSrc: '/models/react-3d.glb',
         visible: true,
-        skillComp: <Reactjs />
+        skillComp: <Reactjs />,
+        skillModel: ThreeModels.React3d
     },
     {
         id: 'Mongodb',
         modelSrc: '/models/mongo-3d.glb',
         visible: true,
-        skillComp: <Mongodb />
+        skillComp: <Mongodb />,
+        skillModel: ThreeModels.Mongo3d
     },
     {
         id: 'ASP.NET',
         modelSrc: '/models/aspnet-3d.glb',
         visible: true,
-        skillComp: <ASPNET />
+        skillComp: <ASPNET />,
+        skillModel: ThreeModels.AspNet3d 
     },
     {
         id: 'SQL',
         modelSrc: '/models/sql-3d.glb',
         visible: true,
-        skillComp: <SQL />
+        skillComp: <SQL />,
+        skillModel: ThreeModels.Sql3d 
     },
     {
         id: 'Next.Js',
         modelSrc: '/models/nextjs-3d.glb',
         visible: true,
-        skillComp: <SQL />
+        skillComp: <SQL />,
+        skillModel: ThreeModels.Next3d
     },
     {
         id: 'Gatsby.Js',
         modelSrc: '/models/gatsby-3d.glb',
         visible: true,
         skillComp: <SQL />,
-        skillModel: <Gatsby3d />,
-        chosenComp: <Gatsby3d />
+        skillModel: ThreeModels.Gatsby3d 
     }
   ]);
 
@@ -118,13 +126,19 @@ const IndexPage = () => {
   }
 
   let renderSkills = [];
-  
  
   if (skillElements.length > 0) {
     skillElements.forEach((skill, i) => {
       if (skill.visible) {
           renderSkills.push((
-            <SkillElement clickEvent={clickSkill} key={i} index={i} skillTxt={skill.id} scale={[7, 7, 7]} mPath={skill.modelSrc} />
+            <SkillElement 
+            width="200px"
+            height="200px"
+            SkillModel={skill.skillModel} 
+            clickEvent={clickSkill} 
+            key={i} index={i} 
+            skillTxt={skill.id} 
+            scale={[7, 7, 7]} />
           ))
       }
     });
@@ -139,15 +153,15 @@ const IndexPage = () => {
                 <div className="col-lg-12">
                     <div className="port-skills-links">
                         <ul>
-                            {renderSkills? renderSkills : ''}
+                            { renderSkills? renderSkills : '' }
                         </ul>
                     </div>
                 </div>
             </div>
             <div className="row">
               {/* Testing the new SkillElement and ChosenSkill components!!! */}
-              {/* <ChosenSkill SkillModel={GatsbyModel} scale={[1,1,1]} />
-              <SkillElement2 SkillModel={GatsbyModel} scale={[1,1,1]} /> */}
+              {/* <ChosenSkill SkillModel={GatsbyModel} scale={[1,1,1]} /> */}
+              {/* <SkillElement SkillModel={ThreeModels.Gatsby3d} scale={[1,1,1]} /> */}
                 <div className="col-lg-12 d-flex justify-content-center mt-3">
                     <div className="drop-skill">
                         { 

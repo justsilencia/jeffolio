@@ -24,7 +24,7 @@ export default function Gatsby3d(props) {
 
   return (
       <group ref={modelRef} {...props} dispose={null}>
-        <mesh geometry={nodes.Circle.geometry} material={materials['Material.001']} scale={30.29} />
+        <mesh geometry={nodes.Circle.geometry} material={materials['Material.001']} scale={5.29} />
       </group>
   )
 }

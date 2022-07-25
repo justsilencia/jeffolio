@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useThree, useFrame } from '@react-three/fiber';
-import AnimateHover from './AnimateHover';
-import modelMods from './modelMods';
+import AnimateHover from './utils/AnimateHover';
+import modelMods from './utils/modelMods';
 
 export default function Mongo3d(props) {
   
-  const modelRef = useRef()
-  const { nodes, materials } = useGLTF('/mongo-3d.glb')
+  const modelRef = useRef();
+  const { nodes, materials } = useGLTF('/models/mongo-3d.glb');
 
   useThree(({camera}) => {
     camera.position.y = modelMods.cameraY;
@@ -31,4 +31,4 @@ export default function Mongo3d(props) {
   )
 }
 
-useGLTF.preload('/mongo-3d.glb')
+useGLTF.preload('/models/mongo-3d.glb');
