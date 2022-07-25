@@ -30,7 +30,7 @@ export default function SkillElement({ SkillModel, scale, skillTxt, clickEvent, 
         onClick={() => clickEvent(index)}
         >
             <SkillModelViewer width={width} height={height}>
-                <SkillModel animateProps={animateParams} />
+                <SkillModel scale={scale} animateProps={animateParams} />
             </SkillModelViewer>
             <span>{skillTxt}</span>
         </li>

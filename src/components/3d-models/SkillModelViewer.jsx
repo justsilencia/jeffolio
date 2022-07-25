@@ -2,12 +2,12 @@ import React from 'react';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from 'react';
 
-export default function SkillModelViewer({children, width, height}) {
+export default function SkillModelViewer({children, width, height }) {
 
     
 
     return (
-        <div style={{ width: "250px", height: "250px" }}>
+        <div style={{ width: width, height: height }}>
             <Canvas>
                 <ambientLight intensity={0.3} />
                 <spotLight position={[20, 15, 10]} angle={0.55} penumbra={1} />
