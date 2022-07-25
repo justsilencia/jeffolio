@@ -1,0 +1,30 @@
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
+import { useThree, useFrame } from '@react-three/fiber';
+import AnimateHover from './AnimateHover';
+import modelMods from './utils/modelMods';
+
+export default function Css3d(props) {
+  const group = useRef()
+  const { nodes, materials } = useGLTF('/css-3d.glb')
+
+  useThree(({camera}) => {
+    camera.position.y = modelMods.cameraY;
+    camera.lookAt(...modelMods.cameraLookat);
+  });
+
+  useFrame(() => {
+    (props.animateProps.animateMode === 1) ? 
+      AnimateHover(modelRef, props.animateProps) 
+      : 
+      modelRef.current.rotation.z += modelMods.zRotate;
+  });
+
+  return (
+    <group ref={group} {...props} dispose={null}>
+      <mesh geometry={nodes.Curve.geometry} material={materials.SVGMat} scale={13.41} />
+    </group>
+  )
+}
+
+useGLTF.preload('/css-3d.glb')

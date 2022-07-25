@@ -2,20 +2,24 @@
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useThree, useFrame } from '@react-three/fiber';
-import AnimateHover from './AnimateHover';
+import AnimateHover from './utils/AnimateHover';
+import modelMods from './utils/modelMods';
 
-export default function GatsbyModel(props) {
+export default function Gatsby3d(props) {
 
   const modelRef = useRef();
-  const { nodes, materials } = useGLTF('/models/gatsby-3d-chosen.glb');
+  const { nodes, materials } = useGLTF('/models/gatsby-3d.glb');
 
   useThree(({camera}) => {
-    camera.position.y = 80;
-    camera.lookAt(0, 0, 0);
+    camera.position.y = modelMods.cameraY;
+    camera.lookAt(...modelMods.cameraLookat);
   });
 
   useFrame(() => {
-    (props.animateProps.animateMode === 1) ? AnimateHover(modelRef, props.animateProps) : modelRef.current.rotation.z += .01;
+    (props.animateProps.animateMode === 1) ? 
+      AnimateHover(modelRef, props.animateProps) 
+      : 
+      modelRef.current.rotation.z += modelMods.zRotate;
   });
 
   return (

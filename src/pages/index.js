@@ -14,11 +14,13 @@ import Reactjs from '../components/skills/reactjs';
 import SQL from '../components/skills/sql';
 import Mongodb from '../components/skills/mongodb';
 import ASPNET from '../components/skills/aspnet';
+
+// 3d Model Components
 import SkillElement from '../components/skillelement';
 import SkillElement2 from "../components/3d-models/SkillElement";
-
+import ChosenSkill from "../components/3d-models/ChosenSkill";
 import SphereCollage from '../components/3d-models/SphereCollage';
-import GatsbyModel from '../components/3d-models/Gatsby-3d';
+import Gatsby3d from '../components/3d-models/Gatsby-3d';
 import SkillModelViewer from "../components/3d-models/SkillModelViewer";
 
 const IndexPage = () => {
@@ -91,8 +93,8 @@ const IndexPage = () => {
         modelSrc: '/models/gatsby-3d.glb',
         visible: true,
         skillComp: <SQL />,
-        skillModel: <GatsbyModel />,
-        chosenComp: <GatsbyModel />
+        skillModel: <Gatsby3d />,
+        chosenComp: <Gatsby3d />
     }
   ]);
 
@@ -143,13 +145,13 @@ const IndexPage = () => {
                 </div>
             </div>
             <div className="row">
-              {/* Testing the new SkillElement component!!! */}
-              <SkillElement2 SkillModel={GatsbyModel} animateMode={1} scale={[1,1,1]} />
+              {/* Testing the new SkillElement and ChosenSkill components!!! */}
+              {/* <ChosenSkill SkillModel={GatsbyModel} scale={[1,1,1]} />
+              <SkillElement2 SkillModel={GatsbyModel} scale={[1,1,1]} /> */}
                 <div className="col-lg-12 d-flex justify-content-center mt-3">
                     <div className="drop-skill">
                         { 
                             chosenSkill.visible?
-
                               <>
                                   <h1>{chosenSkill.skillName}</h1>
                                   <div id="chosen-model">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SkillModelViewer from './SkillModelViewer';
 
-export default function SkillElement2({ animateMode, SkillModel, scale, skillTxt, clickEvent, index }) {
+export default function SkillElement2({ SkillModel, scale, skillTxt, clickEvent, index }) {
 
     const [animateParams, setAnimateParams] = useState({
         scale: {
@@ -11,7 +11,7 @@ export default function SkillElement2({ animateMode, SkillModel, scale, skillTxt
             growScale: scale.map(axis => axis + .5),
             shrinkScale: scale
         },
-        animateMode: animateMode
+        animateMode: 1
     });
     
     return (
