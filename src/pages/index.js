@@ -133,8 +133,8 @@ const IndexPage = () => {
       if (skill.visible) {
           renderSkills.push((
             <SkillElement 
-            width="200px"
-            height="200px"
+            width="150px"
+            height="150px"
             SkillModel={skill.skillModel} 
             clickEvent={clickSkill} 
             key={i} index={i} 
@@ -170,7 +170,7 @@ const IndexPage = () => {
                               <>
                                   <h1>{chosenSkill.skillName}</h1>
                                   <div id="chosen-model">
-                                    <ChosenSkill SkillModel={chosenSkill.skillModel} scale={[12,12,12]} />
+                                    <ChosenSkill SkillModel={chosenSkill.skillModel} scale={[7,7,7]} />
                                   </div>
                               </>
                             : ''
@@ -178,13 +178,19 @@ const IndexPage = () => {
                         
                         {
                             chosenSkill.visible? 
-                            <div className="skill-summary-scroll shadow-scrollwindow">
-                                <Scrollbar>
-                                    <h3>Skill Summary</h3>
-                                    {chosenSkill.skillComp}
-                                </Scrollbar>
+                             <div className="skill-summary-scroll shadow-scrollwindow">
+                              <h3>Skill Summary</h3>
+                              {chosenSkill.skillComp}
                             </div> : 
                             <div className="choose-skill">
+                              <svg viewBox="0 0 100 100">
+                                    <path d="M 0, 50 a 50, 50 0 1, 1 0, 1 z" id="circle" fillOpacity={"0"} />
+                                    <text fill="#fff">
+                                        <textPath xlinkHref="#circle">
+                                            CHOOSE A SKILL!
+                                        </textPath>
+                                    </text>
+                                </svg>
                               <SphereCollage />
                             </div>
                         }
