@@ -170,7 +170,7 @@ const IndexPage = () => {
                               <>
                                   <h1>{chosenSkill.skillName}</h1>
                                   <div id="chosen-model">
-                                    <ChosenSkill SkillModel={chosenSkill.skillModel} scale={[7,7,7]} />
+                                    <ChosenSkill key={chosenSkill.skillName} SkillModel={chosenSkill.skillModel} modScale={[7,7,7]} />
                                   </div>
                               </>
                             : ''
