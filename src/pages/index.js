@@ -22,6 +22,7 @@ import ChosenSkill from "../components/3d-models/ChosenSkill";
 import SphereCollage from '../components/3d-models/SphereCollage';
 import * as ThreeModels from '../components/3d-models';
 import SkillModelViewer from "../components/3d-models/SkillModelViewer";
+import ChooseSkill from "../components/3d-models/Sphere-txt";
 
 const IndexPage = () => {
 
@@ -160,9 +161,6 @@ const IndexPage = () => {
                 </div>
             </div>
             <div className="row">
-              {/* Testing the new SkillElement and ChosenSkill components!!! */}
-              {/* <ChosenSkill SkillModel={ThreeModels.Gatsby3d} scale={[13,13,13]} /> */}
-              {/* <SkillElement SkillModel={ThreeModels.Gatsby3d} scale={[1,1,1]} /> */}
                 <div className="col-lg-12 d-flex justify-content-center mt-3">
                     <div className="drop-skill">
                         { 
@@ -183,15 +181,7 @@ const IndexPage = () => {
                               {chosenSkill.skillComp}
                             </div> : 
                             <div className="choose-skill">
-                              <svg viewBox="0 0 100 100">
-                                    <path d="M 0, 50 a 50, 50 0 1, 1 0, 1 z" id="circle" fillOpacity={"0"} />
-                                    <text fill="#fff">
-                                        <textPath xlinkHref="#circle">
-                                            CHOOSE A SKILL!
-                                        </textPath>
-                                    </text>
-                                </svg>
-                              <SphereCollage />
+                              <ChosenSkill SkillModel={ChooseSkill} modScale={[1,1,1]} />
                             </div>
                         }
                     </div>
