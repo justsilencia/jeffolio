@@ -13,8 +13,8 @@ export default function Model(props) {
   });
 
   useFrame(() => {
-    group.current.rotation.z += .005;
-    group.current.rotation.x += .005;
+    group.current.rotation.z += .003;
+    group.current.rotation.x += .003;
   });
 
   return (

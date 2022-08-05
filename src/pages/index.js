@@ -2,8 +2,6 @@ import React, { useState } from "react";
 //import { Link } from "gatsby"
 import Layout from '../components/layout';
 import Seo from '../components/seo';
-import Scrollbar from 'react-perfect-scrollbar';
-import 'react-perfect-scrollbar/dist/css/styles.css';
 
 // Skill components...
 import HTML5 from '../components/skills/html5';
@@ -15,14 +13,13 @@ import SQL from '../components/skills/sql';
 import Mongodb from '../components/skills/mongodb';
 import ASPNET from '../components/skills/aspnet';
 
-// 3d Model Components
-//import SkillElement from '../components/skillelement';
+// Parent components for viewing 3d models.
 import SkillElement from "../components/3d-models/SkillElement";
 import ChosenSkill from "../components/3d-models/ChosenSkill";
-import SphereCollage from '../components/3d-models/SphereCollage';
-import * as ThreeModels from '../components/3d-models';
-import SkillModelViewer from "../components/3d-models/SkillModelViewer";
 import ChooseSkill from "../components/3d-models/Sphere-txt";
+
+// 3d model components
+import * as ThreeModels from '../components/3d-models';
 
 const IndexPage = () => {
 
@@ -181,7 +178,7 @@ const IndexPage = () => {
                               {chosenSkill.skillComp}
                             </div> : 
                             <div className="choose-skill">
-                              <ChosenSkill SkillModel={ChooseSkill} modScale={[1,1,1]} />
+                              <ChosenSkill SkillModel={ChooseSkill} modScale={[.9,.9,.9]} />
                             </div>
                         }
                     </div>
