@@ -7,6 +7,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className='content-outer' id='outer-container'>
+      <CustNavbar />
       <main className='content-wrap' id='page-wrap'>
         <SkillNetworks />
         <div className='app container'>
