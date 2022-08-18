@@ -147,7 +147,6 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title='Home' />
-      
       <div className="row">
                 <div className="col-lg-12">
                     <div className="port-skills-links">
