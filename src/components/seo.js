@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import FontUrl1 from "../styles/fonts/MontserratAlternates-Regular.woff2";
-//import FontUrl2 from "../styles/fonts/montheavydemo.woff2";
+import FontUrl2 from "../styles/fonts/SourceSansPro-Light.woff2";
+import FontUrl3 from "../styles/fonts/SourceSansPro-Regular.woff2";
 
 function Seo({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -75,6 +76,16 @@ function Seo({ description, lang, meta, title }) {
         <link rel="preload"
             as="font"
             href={FontUrl1}
+            type="font/woff2"
+            crossOrigin="anonymous" />
+        <link rel="preload"
+            as="font"
+            href={FontUrl2}
+            type="font/woff2"
+            crossOrigin="anonymous" />
+        <link rel="preload"
+            as="font"
+            href={FontUrl3}
             type="font/woff2"
             crossOrigin="anonymous" />
     </Helmet>
