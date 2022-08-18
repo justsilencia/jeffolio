@@ -21,8 +21,9 @@
 .content-wrap {
     position: relative;
     background-color: $themeblue;
-    min-height: 100%;
+    height: 100%;
     padding: 4em 3em;
+    overflow: auto;
 }
 
 .top-bar {
