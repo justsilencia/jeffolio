@@ -30,7 +30,7 @@ const SkillNetworks = () => {
                 href="https://stackoverflow.com/users/9040866/silencedogood">
                     <div className="flex-link">
                         <div>
-                            <img alt="Stackoverflow logo." src="img/stackoverflow.png" />
+                            <img alt="Stackoverflow logo." src="/images/stackoverflow.png" />
                         </div>
                         <div>
                             { stackInfo? stackInfo.display_name : '' }
@@ -50,7 +50,7 @@ const SkillNetworks = () => {
                 href="https://github.com/justsilencia/folio">
                     <div className="flex-link">
                         <div>
-                            <img alt="GIT logo." src="img/git.png" />
+                            <img alt="GIT logo." src="/images/git.png" />
                         </div>
                         <div>
                             Github Repository
