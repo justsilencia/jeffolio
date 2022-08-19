@@ -19,7 +19,7 @@ export default function ChosenSkill({SkillModel, modScale}) {
     
     return (
         <SkillModelViewer width="250px" height="250px">
-            <OrbitControls />
+            <OrbitControls enableZoom={false} />
             <animated.mesh scale={scale} ref={ref}>
                 <SkillModel animateProps={{animateMode: 0}} scale={modScale} />
             </animated.mesh>

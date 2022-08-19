@@ -1,25 +1,19 @@
-import React, { useState } from "react";
-//import { Link } from "gatsby"
+
+// Standard components.
+import React, { useState } from 'react';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-// Skill components...
-import HTML5 from '../components/skills/html5';
-import CSS3 from '../components/skills/css3';
-import Javascript from '../components/skills/javascript';
-import Nodejs from '../components/skills/nodejs';
-import Reactjs from '../components/skills/reactjs';
-import SQL from '../components/skills/sql';
-import Mongodb from '../components/skills/mongodb';
-import ASPNET from '../components/skills/aspnet';
-
 // Parent components for viewing 3d models.
-import SkillElement from "../components/3d-models/SkillElement";
-import ChosenSkill from "../components/3d-models/ChosenSkill";
-import ChooseSkill from "../components/3d-models/Sphere-txt";
+import SkillElement from '../components/3d-models/SkillElement';
+import ChosenSkill from '../components/3d-models/ChosenSkill';
+import ChooseSkill from '../components/3d-models/Sphere-txt';
 
-// 3d model components
+// 3d model components.
 import * as ThreeModels from '../components/3d-models';
+
+// Skill components.
+import * as Skills from '../components/skills';
 
 const IndexPage = () => {
 
@@ -37,70 +31,70 @@ const IndexPage = () => {
         id: 'HTML5',
         modelSrc: '/models/html-3d.glb',
         visible: true,
-        skillComp: <HTML5 />,
+        skillComp: <Skills.HTML5 />,
         skillModel: ThreeModels.Html3d
     },
     {
         id: 'CSS3',
         modelSrc: '/models/css-3d.glb',
         visible: true,
-        skillComp: <CSS3 />,
+        skillComp: <Skills.CSS3 />,
         skillModel: ThreeModels.Css3d
     },
     {
         id: 'Javascript',
         modelSrc: '/models/javascript-3d.glb',
         visible: true,
-        skillComp: <Javascript />,
+        skillComp: <Skills.Javascript />,
         skillModel: ThreeModels.Javascript3d
     },
     {
         id: 'NodeJs',
         modelSrc: '/models/node-3d.glb',
         visible: true,
-        skillComp: <Nodejs />,
+        skillComp: <Skills.Nodejs />,
         skillModel: ThreeModels.Node3d
     },
     {
         id: 'ReactJs',
         modelSrc: '/models/react-3d.glb',
         visible: true,
-        skillComp: <Reactjs />,
+        skillComp: <Skills.Reactjs />,
         skillModel: ThreeModels.React3d
     },
     {
         id: 'Mongodb',
         modelSrc: '/models/mongo-3d.glb',
         visible: true,
-        skillComp: <Mongodb />,
+        skillComp: <Skills.Mongodb />,
         skillModel: ThreeModels.Mongo3d
     },
     {
         id: 'ASP.NET',
         modelSrc: '/models/aspnet-3d.glb',
         visible: true,
-        skillComp: <ASPNET />,
+        skillComp: <Skills.ASPNET />,
         skillModel: ThreeModels.AspNet3d 
     },
     {
         id: 'SQL',
         modelSrc: '/models/sql-3d.glb',
         visible: true,
-        skillComp: <SQL />,
+        skillComp: <Skills.SQL />,
         skillModel: ThreeModels.Sql3d 
     },
     {
         id: 'Next.Js',
         modelSrc: '/models/nextjs-3d.glb',
         visible: true,
-        skillComp: <SQL />,
+        skillComp: <Skills.SQL />,
         skillModel: ThreeModels.Next3d
     },
     {
         id: 'Gatsby.Js',
         modelSrc: '/models/gatsby-3d.glb',
         visible: true,
-        skillComp: <SQL />,
+        skillComp: <Skills.SQL />,
         skillModel: ThreeModels.Gatsby3d 
     }
   ]);
