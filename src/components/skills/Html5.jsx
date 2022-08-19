@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HTML5 = () => {
+const Html5 = () => {
 
     return (
         <>
@@ -30,4 +30,4 @@ const HTML5 = () => {
     )
 }
 
-export default HTML5;
+export default Html5;

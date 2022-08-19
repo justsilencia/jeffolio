@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ASPNET = () => {
+const AspNet = () => {
 
     return (
         <>
@@ -31,4 +31,4 @@ const ASPNET = () => {
     )
 }
 
-export default ASPNET;
+export default AspNet;

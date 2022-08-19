@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SQL = () => {
+const Sql = () => {
 
     return (
         <>
@@ -34,4 +34,4 @@ const SQL = () => {
     )
 }
 
-export default SQL;
+export default Sql;

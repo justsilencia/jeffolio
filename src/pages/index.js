@@ -1,8 +1,8 @@
 
 // Standard components.
 import React, { useState } from 'react';
-import Layout from '../components/layout';
-import Seo from '../components/seo';
+import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 
 // Parent components for viewing 3d models.
 import SkillElement from '../components/3d-models/SkillElement';
@@ -31,14 +31,14 @@ const IndexPage = () => {
         id: 'HTML5',
         modelSrc: '/models/html-3d.glb',
         visible: true,
-        skillComp: <Skills.HTML5 />,
+        skillComp: <Skills.Html5 />,
         skillModel: ThreeModels.Html3d
     },
     {
         id: 'CSS3',
         modelSrc: '/models/css-3d.glb',
         visible: true,
-        skillComp: <Skills.CSS3 />,
+        skillComp: <Skills.Css3 />,
         skillModel: ThreeModels.Css3d
     },
     {
@@ -73,28 +73,28 @@ const IndexPage = () => {
         id: 'ASP.NET',
         modelSrc: '/models/aspnet-3d.glb',
         visible: true,
-        skillComp: <Skills.ASPNET />,
+        skillComp: <Skills.AspNet />,
         skillModel: ThreeModels.AspNet3d 
     },
     {
         id: 'SQL',
         modelSrc: '/models/sql-3d.glb',
         visible: true,
-        skillComp: <Skills.SQL />,
+        skillComp: <Skills.Sql />,
         skillModel: ThreeModels.Sql3d 
     },
     {
         id: 'Next.Js',
         modelSrc: '/models/nextjs-3d.glb',
         visible: true,
-        skillComp: <Skills.SQL />,
+        skillComp: <Skills.Sql />,
         skillModel: ThreeModels.Next3d
     },
     {
         id: 'Gatsby.Js',
         modelSrc: '/models/gatsby-3d.glb',
         visible: true,
-        skillComp: <Skills.SQL />,
+        skillComp: <Skills.Sql />,
         skillModel: ThreeModels.Gatsby3d 
     }
   ]);

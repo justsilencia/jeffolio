@@ -1,5 +1,5 @@
 import * as React from 'react';
-import SkillNetworks from './skillnetworks';
+import SkillNetworks from './SkillNetworks';
 import CustNavbar from './nav/CustNavbar';
 import '../styles/index.scss';
 

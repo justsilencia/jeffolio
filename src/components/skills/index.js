@@ -1,10 +1,10 @@
-import HTML5 from './html5';
-import CSS3 from './css3';
-import Javascript from './javascript';
-import Nodejs from './nodejs';
-import Reactjs from './reactjs';
-import SQL from './sql';
-import Mongodb from './mongodb';
-import ASPNET from './aspnet';
+import Html5 from './Html5';
+import Css3 from './Css3';
+import Javascript from './Javascript';
+import Nodejs from './Nodejs';
+import Reactjs from './Reactjs';
+import Sql from './Sql';
+import Mongodb from './Mongodb';
+import AspNet from './AspNet';
 
-export { HTML5, CSS3, Javascript, Nodejs, Reactjs, SQL, Mongodb, ASPNET}
+export { Html5, Css3, Javascript, Nodejs, Reactjs, Sql, Mongodb, AspNet}
