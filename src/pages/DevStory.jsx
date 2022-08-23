@@ -78,7 +78,7 @@ class DevStory extends Component {
               <img
                 alt="COMAS for dev story"
                 className="story-img"
-                src="/images/comas-1.png"
+                src="/images/comas.webp"
               />
             </p>
             <p>
@@ -128,7 +128,7 @@ class DevStory extends Component {
               <img
                 alt="veSwap for developer story"
                 className="story-img"
-                src="/images/veSwap.png"
+                src="/images/veswap.webp"
               />
             </p>
             <p>
@@ -151,7 +151,7 @@ class DevStory extends Component {
               <img
                 alt="Credit Score Maestro for developer story"
                 className="story-img"
-                src="/images/csm-1.png"
+                src="/images/csm.webp"
               />
             </p>
             <p>
@@ -224,7 +224,7 @@ class DevStory extends Component {
               <img
                 alt="MAC for developer story"
                 className="story-img"
-                src="/images/mac.png"
+                src="/images/mac.webp"
               />
             </p>
             <p>
@@ -234,7 +234,7 @@ class DevStory extends Component {
             </p>
             <hr />
             <p>
-              <em>Sidenote:</em> In August of 2020, I was awarded the
+              <em>Sidenote:</em> In August of 2020, I was awarded the&nbsp;
               <em>Unsung Hero</em> gold badge on StackOverflow. I'm quite proud
               of this badge, as I pride myself on the enjoyment I find in
               helping others.

@@ -37,8 +37,8 @@ class Projects extends Component {
               over the years, in chronological order from newest to oldest.
               <br />
               <em>
-                * This portfolio was built with Node, Express, React, and
-                PostgreSQL.
+                * This portfolio was built with React/GatsbyJs and hosted on
+                Netlify.
               </em>
             </p>
             <div>
@@ -100,7 +100,7 @@ class Projects extends Component {
               <img
                 alt="MAC for portfolio."
                 className="story-img"
-                src="/images/mac.png"
+                src="/images/mac.webp"
               />
             </p>
             <span>
@@ -214,7 +214,7 @@ class Projects extends Component {
               <img
                 alt="Credit Score Maestro for portfolio."
                 className="story-img"
-                src="/images/csm.png"
+                src="/images/csm.webp"
               />
             </p>
             <span>
@@ -256,7 +256,7 @@ class Projects extends Component {
               <img
                 alt="veSwap for portfolio."
                 className="story-img"
-                src="/images/veswap.png"
+                src="/images/veswap.webp"
               />
             </p>
             <span>
@@ -300,7 +300,7 @@ class Projects extends Component {
               <img
                 alt="COMAS for portfolio."
                 className="story-img"
-                src="/images/comas.png"
+                src="/images/comas.webp"
               />
             </p>
           </div>
