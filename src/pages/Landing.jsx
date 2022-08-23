@@ -5,7 +5,7 @@ import Seo from "../components/Seo"
 // Parent components for viewing 3d models.
 import SkillElement from "../components/3d-models/SkillElement"
 import ChosenSkill from "../components/3d-models/ChosenSkill"
-import ChooseSkill from "../components/3d-models/Sphere-txt"
+import LandingSphere from "../components/3d-models/LandingSphere"
 
 // 3d model components.
 import * as ThreeModels from "../components/3d-models"
@@ -18,7 +18,6 @@ export default function Landing() {
     modelSrc: "",
     skillName: "",
     visible: false,
-    animate: false,
     skillComp: "",
     skillModel: "",
   })
@@ -104,11 +103,11 @@ export default function Landing() {
     })
 
     setSkillElements(skillArr)
+
     setChosenSkill({
       modelSrc: skillArr[index].modelSrc,
       skillName: skillArr[index].id,
       visible: true,
-      animate: true,
       skillComp: skillArr[index].skillComp,
       skillModel: skillArr[index].skillModel,
     })
@@ -171,7 +170,7 @@ export default function Landing() {
             ) : (
               <div className="choose-skill">
                 <ChosenSkill
-                  SkillModel={ChooseSkill}
+                  SkillModel={LandingSphere}
                   modScale={[0.9, 0.9, 0.9]}
                 />
               </div>
