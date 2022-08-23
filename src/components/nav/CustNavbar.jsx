@@ -20,25 +20,25 @@ class CustNavbar extends Component {
                         HOME
                     </span>
                 </a>
-                <a href='/projects'>
+                <a href='/Projects'>
                     <FontAwesomeIcon icon={faCog} />
                     <span>
                         PROJECTS
                     </span>
                 </a>
-                <a href='/devstory'>
+                <a href='/DevStory'>
                     <FontAwesomeIcon icon={faBook} />
                     <span>
                         DEVELOPER STORY
                     </span>
                 </a>
-                <a id='stats' href='/whyme'>
+                <a id='stats' href='/WhyMe'>
                     <FontAwesomeIcon icon={faQuestion} />
                     <span>
                         WHY ME
                     </span>
                 </a>
-                <a id='stats' href='/feedback'>
+                <a id='stats' href='/Feedback'>
                     <FontAwesomeIcon icon={faCommentDots} />
                     <span>
                         FEEDBACK
