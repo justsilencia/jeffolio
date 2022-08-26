@@ -93,6 +93,13 @@ export default function Landing() {
       skillComp: <Skills.Sql />,
       skillModel: ThreeModels.Gatsby3d,
     },
+    {
+      id: "Three.Js",
+      modelSrc: "/models/threejs-3d.glb",
+      visible: true,
+      skillComp: <Skills.Sql />,
+      skillModel: ThreeModels.Threejs3d,
+    },
   ])
 
   const clickSkill = index => {

@@ -1,9 +1,11 @@
 import React from "react"
 import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
 const WhyMe = () => {
   return (
     <Layout>
+      <Seo title="Why hire me?" />
       <div className="desc-box shadow-scrollwindow">
         <div className="p-3">
           <h1>Why Me?</h1>

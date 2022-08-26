@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { faCalendar } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
 class DevStory extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class DevStory extends Component {
   render() {
     return (
       <Layout>
+        <Seo title="Developer Story" />
         <div className="desc-box shadow-scrollwindow">
           <div className="p-3">
             <h1>Developer Story</h1>
@@ -226,6 +228,11 @@ class DevStory extends Component {
                 className="story-img"
                 src="/images/mac.webp"
               />
+            </p>
+            <p>
+              Since then, I've learned multiple frameworks, such as GatsbyJs and
+              NextJs. I redesigned Credit Score Maetro using the Gatsby
+              framework, and hosted it on Netlify.
             </p>
             <p>
               I guess you could say my developer story isn't quite average.

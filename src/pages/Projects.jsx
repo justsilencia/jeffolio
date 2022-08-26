@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
 class Projects extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Projects extends Component {
   render() {
     return (
       <Layout>
+        <Seo title="My Projects" />
         <div className="desc-box shadow-scrollwindow">
           <div className="projects p-3">
             <h1>Projects</h1>
@@ -37,12 +39,15 @@ class Projects extends Component {
               over the years, in chronological order from newest to oldest.
               <br />
               <em>
-                * This portfolio was built with React/GatsbyJs and hosted on
-                Netlify.
+                * This portfolio was built with React, GatsbyJs, ThreeJs and
+                hosted on Netlify.
               </em>
             </p>
             <div>
               <ul>
+                <li>
+                  <a href="#csm">Credit Score Maestro (GatsbyJs)</a>
+                </li>
                 <li>
                   <a href="#mac">MAC (SERN Stack)</a>
                 </li>
@@ -53,9 +58,6 @@ class Projects extends Component {
                   <a href="#ezemoji">react-ez-emoji (Reactjs)</a>
                 </li>
                 <li>
-                  <a href="#csm">Credit Score Maestro (ASP.Net)</a>
-                </li>
-                <li>
                   <a href="#veswap">veSwap (ASP.Net)</a>
                 </li>
                 <li>
@@ -63,6 +65,52 @@ class Projects extends Component {
                 </li>
               </ul>
             </div>
+            <span>
+              <h2 id="csm">Credit Score Maestro (GatsbyJs)</h2>
+            </span>
+            <p>
+              Credit Score Maestro is a website I built for an ex-banker who
+              wrote a book about credit repair and financial management.
+            </p>
+            <p>
+              It was initially built with ASP.Net web forms. Then, once web
+              forms became depracated, we decided to give the site a face-lift
+              and redesign it with the Gatsby framework. This lead to huge
+              improvements in SEO metrics.
+            </p>
+            <p>
+              I did a lot of research on SEO for this project, and utilized
+              marketing resources such as Facebook and Google PPC campaigns. It
+              certainly gave me an appreciation for what it takes to improve
+              Google results and increase organic traffic.
+            </p>
+            <div>
+              <h3>Features:</h3>
+              <ul>
+                <li>
+                  Initially built with ASP.Net web forms. Redesigned with
+                  GatsbyJs.
+                </li>
+                <li>Optimized for SEO purposes.</li>
+                <li>Responsive design with bootstrap CSS and custom CSS.</li>
+              </ul>
+            </div>
+            <p className="no-indent">
+              <label
+                onClick={() => this.imgToggle(3)}
+                htmlFor="imgCheck4"
+                className="btn-story-img"
+              >
+                {this.state.imgState[3].visible ? "Hide" : "Show"} Images of
+                Credit Score Maestro!
+              </label>
+              <input className="hide" id="imgCheck4" type="checkbox" />
+              <img
+                alt="Credit Score Maestro for portfolio."
+                className="story-img"
+                src="/images/csm.webp"
+              />
+            </p>
             <span>
               <h2 id="mac">MAC (SERN Stack)</h2>
             </span>
@@ -178,43 +226,6 @@ class Projects extends Component {
                 alt="react-ez-emoji for portfolio."
                 className="story-img"
                 src="/images/react-ez-emoji.png"
-              />
-            </p>
-            <span>
-              <h2 id="csm">Credit Score Maestro (ASP.Net)</h2>
-            </span>
-            <p>
-              Credit Score Maestro is a website I built for an ex-banker who
-              wrote a book about credit repair and financial management.
-            </p>
-            <p>
-              I did a lot of research on SEO for this project, and utilized
-              marketing resources such as Facebook and Google PPC campaigns. It
-              certainly gave me an appreciation for what it takes to improve
-              Google results and increase organic traffic.
-            </p>
-            <div>
-              <h3>Features:</h3>
-              <ul>
-                <li>Built with ASP.Net web forms.</li>
-                <li>Optimized for SEO purposes.</li>
-                <li>Responsive design with bootstrap.</li>
-              </ul>
-            </div>
-            <p className="no-indent">
-              <label
-                onClick={() => this.imgToggle(3)}
-                htmlFor="imgCheck4"
-                className="btn-story-img"
-              >
-                {this.state.imgState[3].visible ? "Hide" : "Show"} Images of
-                Credit Score Maestro!
-              </label>
-              <input className="hide" id="imgCheck4" type="checkbox" />
-              <img
-                alt="Credit Score Maestro for portfolio."
-                className="story-img"
-                src="/images/csm.webp"
               />
             </p>
             <span>
