@@ -1,15 +1,15 @@
 import React, { useRef } from "react"
 import { useGLTF } from "@react-three/drei"
-import { useFrame, useThree } from "@react-three/fiber"
+import { useThree, useFrame } from "@react-three/fiber"
 import AnimateHover from "./utils/AnimateHover"
 import modelMods from "./utils/modelMods"
 
-export default function Threejs3d(props) {
+export default function Model(props) {
   const modelRef = useRef()
-  const { nodes } = useGLTF("/models/threejs-3d.glb")
+  const { nodes, materials } = useGLTF("/models/threejs-3d.glb")
 
   useThree(({ camera }) => {
-    camera.position.x = 2
+    camera.position.y = modelMods.cameraY
     camera.lookAt(...modelMods.cameraLookat)
   })
 
@@ -21,11 +21,13 @@ export default function Threejs3d(props) {
 
   return (
     <group ref={modelRef} {...props} dispose={null}>
-      <mesh
-        scale={0.008}
-        geometry={nodes.threejs.geometry}
-        material={nodes.threejs.material}
-      />
+      <group rotation={[Math.PI / 2, 0, 0]} scale={0.11}>
+        <mesh
+          geometry={nodes.threejs.geometry}
+          material={materials.Material_0}
+          rotation={[0, 0, -0.5]}
+        />
+      </group>
     </group>
   )
 }
