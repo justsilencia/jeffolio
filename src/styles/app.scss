@@ -131,7 +131,11 @@
     .powered-by {
         div { display: block; margin-left: 10px; }
     }
-    
+
+    .desc-box {
+        margin-top: 4em;
+        width: 90%;
+    }
     .content-wrap {
         padding: 1em .25em 0 .25em;
     }
@@ -156,7 +160,7 @@
 
     .desc-box {
         width: 100%;
-        height: 70vh;
+        height: auto;
         margin: 4em auto 0 auto;
         font-size: 1.25em;
         p {
