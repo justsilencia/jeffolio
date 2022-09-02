@@ -143,7 +143,11 @@ export default function Landing() {
 
   return (
     <>
-      <Seo title="Home" />
+      <Seo
+        title="Full Stack Dev"
+        description="I'm a full-stack web developer with experience working on multiple 
+        different frameworks and platforms. Feel free to reach out!"
+      />
       <div className="row">
         <div className="col-lg-12">
           <div className="port-skills-links">
