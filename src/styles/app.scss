@@ -114,7 +114,19 @@
     text-indent: 0 !important;
 }
 
+.nav-reviews {
+    svg path {
+        color: green;
+    }
+}
 
+.review {
+    font-size: 15px;
+    p {
+        font-style: italic;
+    }
+    .review-date { font-family: 'SourceSansPro-Reg' !important; font-size: .65em; }
+}
 
 @media only screen and (max-width: 700px) {
     .top-bar {
