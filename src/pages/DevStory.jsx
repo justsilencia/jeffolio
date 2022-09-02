@@ -31,13 +31,111 @@ class DevStory extends Component {
     return (
       <Layout>
         <Seo title="Developer Story" />
-        <div className="desc-box shadow-scrollwindow">
+        <div className="dev-story desc-box shadow-scrollwindow">
           <div className="p-3">
             <h1>Developer Story</h1>
             <p>
               Rather than make this one long and impressively boring tale, I
               decided to break it up into time-frames so it's easier to digest.
+              I'll begin with my most recent activity since it's the most
+              relevant. After that, I'll convey an abridged recollection of my
+              tale from the very beginning.
             </p>
+            <hr />
+            <span className="time-frame">
+              <FontAwesomeIcon icon={faCalendar} />
+              <h2> 2020 - Present</h2>
+            </span>
+            <p>
+              Starting in 2021 I began advertising my skills on Upwork, an
+              online freelancing platform. I have completed multiple jobs with a
+              100% success rate, along with receiving 5 star reviews for each
+              job.
+            </p>
+            <p>
+              I'm currently contracted as a technical writer for the following
+              companies:
+              <ul>
+                <li>
+                  &#8226;&nbsp;
+                  <a target="_child" href="https://www.initialcommit.com/">
+                    Initial Commit LLC
+                  </a>
+                  &nbsp;-&nbsp;
+                  <span style={{ color: "black" }}>
+                    Initial Commit is a blog with various learning resources
+                    related to the programming field. I wrote multiple technical
+                    articles for them relating to the Git version control
+                    system.
+                  </span>
+                </li>
+                <li>
+                  &#8226;&nbsp;
+                  <a target="_child" href="https://www.ohmycrawl.com/">
+                    OhMyCrawl
+                  </a>
+                  &nbsp;-&nbsp;
+                  <span style={{ color: "black" }}>
+                    OhMyCrawl is an SEO consulting company that specializes in
+                    technical SEO with an emphasis on React single-page
+                    applications. I wrote multiple articles for them relating to
+                    React and React metaframeworks such as GatsbyJs and NextJs.
+                  </span>
+                </li>
+              </ul>
+              I wrote multiple technical articles for each company. Here's a few
+              examples of my published work:
+              <br />
+              <br />
+              <h3>Initial Commit LLC</h3>
+              <ul>
+                <li>
+                  <a
+                    target="_child"
+                    href="https://initialcommit.com/blog/git-show"
+                  >
+                    Git-Show | How To Use Git Show With Examples
+                  </a>
+                </li>
+                <li>
+                  <a
+                    target="_child"
+                    href="https://initialcommit.com/blog/git-reset"
+                  >
+                    Git Reset | The Git Reset Command Explained
+                  </a>
+                </li>
+              </ul>
+              <h3>OhMyCrawl</h3>
+              <ul>
+                <li>
+                  <a
+                    target="_child"
+                    href="https://www.ohmycrawl.com/gatsbyjs-v4-deferred-static-generation/"
+                  >
+                    GatsbyJs v4 | Deferred Static Generation
+                  </a>
+                </li>
+                <li>
+                  <a
+                    target="_child"
+                    href="https://www.ohmycrawl.com/next-js-server-side-rendering/"
+                  >
+                    Next JS Server Side Rendering (SSR) Implementation &
+                    Optimization
+                  </a>
+                </li>
+              </ul>
+            </p>
+            <p>
+              <i>
+                Sidenote: For <b>Initial Commit LLC</b>, I operate under the
+                pseudonym Art Sphitz. For <b>OhMyCrawl</b>, I operate as a ghost
+                writer. If required, documentation can be provided to prove the
+                authenticity of my work.
+              </i>
+            </p>
+            <hr />
             <span className="time-frame">
               <FontAwesomeIcon icon={faCalendar} />
               <h2> 2012 - 2013</h2>
@@ -86,7 +184,7 @@ class DevStory extends Component {
             <p>
               While ASP.Net was in full swing, I spent over a year toiling away
               with classic asp, and I don't regret a minute of it. I built a
-              pretty sweet students tracking machine that offered real-time
+              pretty sweet student tracking machine that offered real-time
               metrics thanks to centralized data.
             </p>
             <p>
@@ -94,6 +192,7 @@ class DevStory extends Component {
               entry and exit dates, to genereating standardized reports. They
               liked it so much they used it for over 8 years; and I was hooked.
             </p>
+            <hr />
             <span className="time-frame">
               <FontAwesomeIcon icon={faCalendar} />
               <h2> 2013 - 2016</h2>
@@ -162,9 +261,10 @@ class DevStory extends Component {
               certainly gave me an appreciation for what it takes to improve
               Google results and increase organic traffic.
             </p>
+            <hr />
             <span className="time-frame">
               <FontAwesomeIcon icon={faCalendar} />
-              <h2> 2016 - Present</h2>
+              <h2> 2016 - 2020</h2>
             </span>
             <p>
               After my journey with ASP.Net, I began researching the fastest
@@ -239,6 +339,7 @@ class DevStory extends Component {
               However, it benefited me in many ways, and I'm a better person and
               developer for it.
             </p>
+
             <hr />
             <p>
               <em>Sidenote:</em> In August of 2020, I was awarded the&nbsp;
