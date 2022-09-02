@@ -47,10 +47,9 @@ class DevStory extends Component {
               <h2> 2020 - Present</h2>
             </span>
             <p>
-              Starting in 2021 I began advertising my skills on Upwork, an
-              online freelancing platform. I have completed multiple jobs with a
-              100% success rate, along with receiving 5 star reviews for each
-              job.
+              Starting in 2021 I began advertising myself on Upwork, an online
+              freelancing platform. I have completed multiple jobs with a 100%
+              success rate, along with receiving 5 star reviews for each job.
             </p>
             <p>
               I'm currently contracted as a technical writer for the following
