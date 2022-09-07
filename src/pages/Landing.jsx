@@ -1,11 +1,10 @@
 // Standard components.
 import React, { useState } from "react"
 import Seo from "../components/Seo"
+import SkillsLayout from "../components/SkillsLayout"
 
-// Parent components for viewing 3d models.
-import SkillElement from "../components/3d-models/SkillElement"
+// Component for rendering 3d model for the chosen skill.
 import ChosenSkill from "../components/3d-models/ChosenSkill"
-import LandingSphere from "../components/3d-models/LandingSphere"
 
 // 3d model components.
 import * as ThreeModels from "../components/3d-models"
@@ -102,45 +101,6 @@ export default function Landing() {
     },
   ])
 
-  const clickSkill = index => {
-    let skillArr = []
-    skillElements.forEach((skillEl, i) => {
-      skillArr.push(skillEl)
-      skillArr[i].visible = index !== i ? true : false
-    })
-
-    setSkillElements(skillArr)
-
-    setChosenSkill({
-      modelSrc: skillArr[index].modelSrc,
-      skillName: skillArr[index].id,
-      visible: true,
-      skillComp: skillArr[index].skillComp,
-      skillModel: skillArr[index].skillModel,
-    })
-  }
-
-  let renderSkills = []
-
-  if (skillElements.length > 0) {
-    skillElements.forEach((skill, i) => {
-      if (skill.visible) {
-        renderSkills.push(
-          <SkillElement
-            width="150px"
-            height="150px"
-            SkillModel={skill.skillModel}
-            clickEvent={clickSkill}
-            key={i}
-            index={i}
-            skillTxt={skill.id}
-            scale={[7, 7, 7]}
-          />
-        )
-      }
-    })
-  }
-
   return (
     <>
       <Seo
@@ -150,9 +110,12 @@ export default function Landing() {
       />
       <div className="row">
         <div className="col-lg-12">
-          <div className="port-skills-links">
-            <ul>{renderSkills ? renderSkills : ""}</ul>
-          </div>
+          <SkillsLayout
+            skillVisible={chosenSkill.visible}
+            skillElements={skillElements}
+            setChosenSkill={setChosenSkill}
+            setSkillElements={setSkillElements}
+          />
         </div>
       </div>
       <div className="row">
@@ -160,7 +123,7 @@ export default function Landing() {
           <div className="drop-skill">
             {chosenSkill.visible ? (
               <>
-                <h1>{chosenSkill.skillName}</h1>
+                <h2>{chosenSkill.skillName}</h2>
                 <div id="chosen-model">
                   <ChosenSkill
                     key={chosenSkill.skillName}
@@ -179,12 +142,7 @@ export default function Landing() {
                 {chosenSkill.skillComp}
               </div>
             ) : (
-              <div className="choose-skill">
-                <ChosenSkill
-                  SkillModel={LandingSphere}
-                  modScale={[0.9, 0.9, 0.9]}
-                />
-              </div>
+              ""
             )}
           </div>
         </div>
