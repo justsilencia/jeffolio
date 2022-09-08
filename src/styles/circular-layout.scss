@@ -1,16 +1,20 @@
-/// Mixin to place items on a circle
-/// @author Kitty Giraudel
-/// @author Ana Tudor
 /// @param {Integer} $item-count - Number of items on the circle
 /// @param {Length} $circle-size - Large circle size
 /// @param {Length} $item-size - Single item size
 
-.circle-container {
-  //$circle-size: 608px;
-  margin: 0 auto;
-  position: relative;
+.port-skills-links {
+  margin: 1em 0;
   width: 800px;
   height: 800px;
+  //margin-top: 1em;
+}
+
+.circle-container {
+  //$circle-size: 608px;
+  width: inherit;
+  height: inherit;
+  margin: 0 auto;
+  position: relative;
   padding: 0;
   list-style: none;
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 
 // Parent components for viewing 3d models.
@@ -7,7 +7,6 @@ import ChosenSkill from "../components/3d-models/ChosenSkill"
 import LandingSphere from "../components/3d-models/LandingSphere"
 
 export default function SkillsLayout({
-  skillVisible,
   skillElements,
   setSkillElements,
   setChosenSkill,
@@ -36,15 +35,14 @@ export default function SkillsLayout({
     let skillArr = skillElements.filter(skill => skill.visible == true)
     let xOffset = 0
     let yOffset = 0
-    let radius = 304
-    let size = 608
-    let angle = 0
-    let step = (2 * Math.PI) / skillArr.length
+    let radius = 300
+    let radianAngle = 0
+    let radianStep = (2 * Math.PI) / skillArr.length
 
     skillArr.forEach((skill, i) => {
       if (skill.visible) {
-        xOffset = Math.round(size + radius * Math.cos(angle) - 150 / 2) - 526
-        yOffset = Math.round(size + radius * Math.sin(angle) - 150 / 2) - 526
+        xOffset = Math.round(radius * Math.cos(radianAngle))
+        yOffset = Math.round(radius * Math.sin(radianAngle))
         renderSkills.push(
           <SkillElement
             width="150px"
@@ -58,26 +56,19 @@ export default function SkillsLayout({
             yOffset={yOffset}
           />
         )
-        angle += step
+        radianAngle += radianStep
       }
     })
   }
 
   return (
-    <div className="port-skills-links">
+    <motion.div animate={{ x: 0 }} className="port-skills-links">
       <ul className="circle-container">
         {renderSkills ? renderSkills : ""}
-        {skillVisible ? (
-          ""
-        ) : (
-          <li className="landing-sphere">
-            <ChosenSkill
-              SkillModel={LandingSphere}
-              modScale={[0.9, 0.9, 0.9]}
-            />
-          </li>
-        )}
+        <li className="landing-sphere">
+          <ChosenSkill SkillModel={LandingSphere} modScale={[0.9, 0.9, 0.9]} />
+        </li>
       </ul>
-    </div>
+    </motion.div>
   )
 }

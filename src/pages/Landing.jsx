@@ -108,44 +108,32 @@ export default function Landing() {
         description="I'm a full-stack web developer with experience working on multiple 
         different frameworks and platforms. Feel free to reach out!"
       />
-      <div className="row">
-        <div className="col-lg-12">
-          <SkillsLayout
-            skillVisible={chosenSkill.visible}
-            skillElements={skillElements}
-            setChosenSkill={setChosenSkill}
-            setSkillElements={setSkillElements}
-          />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-12 d-flex justify-content-center mt-3">
-          <div className="drop-skill">
-            {chosenSkill.visible ? (
-              <>
-                <h2>{chosenSkill.skillName}</h2>
-                <div id="chosen-model">
-                  <ChosenSkill
-                    key={chosenSkill.skillName}
-                    SkillModel={chosenSkill.skillModel}
-                    modScale={[7, 7, 7]}
-                  />
-                </div>
-              </>
-            ) : (
-              ""
-            )}
-
-            {chosenSkill.visible ? (
+      <div className="row justify-content-center">
+        <SkillsLayout
+          skillElements={skillElements}
+          setChosenSkill={setChosenSkill}
+          setSkillElements={setSkillElements}
+        />
+        {chosenSkill.visible ? (
+          <div className="col-lg-6 d-flex justify-content-center">
+            <div className="drop-skill">
+              <h2>{chosenSkill.skillName}</h2>
+              <div id="chosen-model">
+                <ChosenSkill
+                  key={chosenSkill.skillName}
+                  SkillModel={chosenSkill.skillModel}
+                  modScale={[7, 7, 7]}
+                />
+              </div>
               <div className="skill-summary-scroll shadow-scrollwindow">
                 <h3>Skill Summary</h3>
                 {chosenSkill.skillComp}
               </div>
-            ) : (
-              ""
-            )}
+            </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
       </div>
     </>
   )
