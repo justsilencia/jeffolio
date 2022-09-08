@@ -33,14 +33,15 @@ export default function SkillsLayout({
   let renderSkills = []
 
   if (skillElements.length > 0) {
+    let skillArr = skillElements.filter(skill => skill.visible == true)
     let xOffset = 0
     let yOffset = 0
     let radius = 304
     let size = 608
     let angle = 0
-    let step = (2 * Math.PI) / skillElements.length
+    let step = (2 * Math.PI) / skillArr.length
 
-    skillElements.forEach((skill, i) => {
+    skillArr.forEach((skill, i) => {
       if (skill.visible) {
         xOffset = Math.round(size + radius * Math.cos(angle) - 150 / 2) - 526
         yOffset = Math.round(size + radius * Math.sin(angle) - 150 / 2) - 526
@@ -52,7 +53,6 @@ export default function SkillsLayout({
             clickEvent={clickSkill}
             key={i}
             index={i}
-            skillTxt={skill.id}
             scale={[7, 7, 7]}
             xOffset={xOffset}
             yOffset={yOffset}

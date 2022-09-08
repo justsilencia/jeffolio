@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 export default function SkillElement({
   SkillModel,
   scale,
-  skillTxt,
   clickEvent,
   index,
   width,
@@ -47,7 +46,6 @@ export default function SkillElement({
       <SkillModelViewer width={width} height={height}>
         <SkillModel scale={scale} animateProps={animateParams} />
       </SkillModelViewer>
-      <span>{skillTxt}</span>
     </motion.li>
   )
 }
