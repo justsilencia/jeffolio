@@ -1,5 +1,5 @@
 // Standard components.
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Seo from "../components/Seo"
 import SkillsLayout from "../components/SkillsLayout"
 
@@ -101,6 +101,25 @@ export default function Landing() {
     },
   ])
 
+  // This effect checks for a change in the skillElements state array in order
+  // to keep the chosenSkill state up to date. The skill that is not visible
+  // is the chosen skill.
+  useEffect(() => {
+    const chosenSkill = skillElements.filter(
+      skill => skill.visible === false
+    )[0]
+
+    if (chosenSkill) {
+      setChosenSkill({
+        modelSrc: chosenSkill.modelSrc,
+        skillName: chosenSkill.id,
+        visible: true,
+        skillComp: chosenSkill.skillComp,
+        skillModel: chosenSkill.skillModel,
+      })
+    }
+  }, [skillElements])
+
   return (
     <>
       <Seo
@@ -111,11 +130,10 @@ export default function Landing() {
       <div className="row justify-content-center">
         <SkillsLayout
           skillElements={skillElements}
-          setChosenSkill={setChosenSkill}
           setSkillElements={setSkillElements}
         />
         {chosenSkill.visible ? (
-          <div className="col-lg-6 d-flex justify-content-center">
+          <div className="col-lg-6">
             <div className="drop-skill">
               <h2>{chosenSkill.skillName}</h2>
               <div id="chosen-model">

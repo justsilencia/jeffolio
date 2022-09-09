@@ -4,7 +4,7 @@ import { useThree, useFrame } from "@react-three/fiber"
 import AnimateHover from "./utils/AnimateHover"
 import modelMods from "./utils/modelMods"
 
-export default function Model(props) {
+export default function Threejs3d(props) {
   const modelRef = useRef()
   const { nodes, materials } = useGLTF("/models/threejs-3d.glb")
 

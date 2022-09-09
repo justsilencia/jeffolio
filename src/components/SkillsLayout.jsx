@@ -6,40 +6,39 @@ import SkillElement from "../components/3d-models/SkillElement"
 import ChosenSkill from "../components/3d-models/ChosenSkill"
 import LandingSphere from "../components/3d-models/LandingSphere"
 
-export default function SkillsLayout({
-  skillElements,
-  setSkillElements,
-  setChosenSkill,
-}) {
+export default function SkillsLayout({ skillElements, setSkillElements }) {
   const clickSkill = index => {
     let skillArr = []
+
+    // This populates the new skillArr array in order to update the skillElements
+    // state array. The only change at this point is the visible property being set
+    // to true or false for the chosen skill.
     skillElements.forEach((skillEl, i) => {
       skillArr.push(skillEl)
       skillArr[i].visible = index !== i ? true : false
     })
 
     setSkillElements(skillArr)
-
-    setChosenSkill({
-      modelSrc: skillArr[index].modelSrc,
-      skillName: skillArr[index].id,
-      visible: true,
-      skillComp: skillArr[index].skillComp,
-      skillModel: skillArr[index].skillModel,
-    })
   }
 
   let renderSkills = []
 
   if (skillElements.length > 0) {
-    let skillArr = skillElements.filter(skill => skill.visible == true)
+    // skillLength is the number of skills visible in the circle. Needed to determine
+    // accurate radians for circle layout radianStep variable.
+    let skillLength = skillElements.filter(
+      skill => skill.visible === true
+    ).length
+
+    // This basic math converts degrees into radians in order to give the
+    // circular layout effect.
     let xOffset = 0
     let yOffset = 0
     let radius = 300
     let radianAngle = 0
-    let radianStep = (2 * Math.PI) / skillArr.length
+    let radianStep = (2 * Math.PI) / skillLength
 
-    skillArr.forEach((skill, i) => {
+    skillElements.forEach((skill, i) => {
       if (skill.visible) {
         xOffset = Math.round(radius * Math.cos(radianAngle))
         yOffset = Math.round(radius * Math.sin(radianAngle))

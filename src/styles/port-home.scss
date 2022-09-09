@@ -3,6 +3,7 @@
 }
 
 .drop-skill {
+  padding-top: 60px;
   text-align: center;
   img {
     width: 130px;
@@ -16,10 +17,6 @@
   #chosen-model {
     display: inline-block;
   }
-}
-
-.img-grow {
-  animation: grow 0.3s;
 }
 
 .skill-summary {
@@ -97,7 +94,7 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .skill-summary-scroll {
-    width: 60%;
+    width: 90%;
     height: auto;
   }
 }
