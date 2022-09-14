@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react"
 import Seo from "../components/Seo"
 import SkillsLayout from "../components/SkillsLayout"
+import useMediaQuery from "../components/utils/useMediaQuery"
 
 // Component for rendering 3d model for the chosen skill.
 import ChosenSkill from "../components/3d-models/ChosenSkill"
@@ -13,6 +14,8 @@ import * as ThreeModels from "../components/3d-models"
 import * as Skills from "../components/skills"
 
 export default function Landing() {
+  const [screenWidth] = useState(useMediaQuery().width)
+
   const [chosenSkill, setChosenSkill] = useState({
     modelSrc: "",
     skillName: "",

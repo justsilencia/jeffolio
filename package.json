@@ -33,6 +33,7 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-rating": "^2.0.5",
     "sass": "^1.53.0",
+    "styled-components": "^5.3.5",
     "three": "^0.141.0"
   },
   "devDependencies": {

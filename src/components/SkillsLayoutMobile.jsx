@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 
 // Parent components for viewing 3d models.
 import SkillElement from "../components/3d-models/SkillElement"
@@ -23,24 +24,8 @@ export default function SkillsLayout({ skillElements, setSkillElements }) {
   let renderSkills = []
 
   if (skillElements.length > 0) {
-    // skillLength is the number of skills visible in the circle. Needed to determine
-    // accurate radians for circle layout radianStep variable.
-    let skillLength = skillElements.filter(
-      skill => skill.visible === true
-    ).length
-
-    // This basic math converts degrees into radians in order to give the
-    // circular layout effect.
-    let xOffset = 0
-    let yOffset = 0
-    let radius = 300
-    let radianAngle = 0
-    let radianStep = (2 * Math.PI) / skillLength
-
     skillElements.forEach((skill, i) => {
       if (skill.visible) {
-        xOffset = Math.round(radius * Math.cos(radianAngle))
-        yOffset = Math.round(radius * Math.sin(radianAngle))
         renderSkills.push(
           <SkillElement
             width="150px"
@@ -50,23 +35,20 @@ export default function SkillsLayout({ skillElements, setSkillElements }) {
             key={i}
             index={i}
             scale={[7, 7, 7]}
-            xOffset={xOffset}
-            yOffset={yOffset}
           />
         )
-        radianAngle += radianStep
       }
     })
   }
 
   return (
-    <div className="port-skills-links">
-      <ul className="circle-container">
+    <motion.div animate={{ x: 0 }} className="port-skills-links">
+      <ul>
         {renderSkills ? renderSkills : ""}
         <li className="landing-sphere">
           <ChosenSkill SkillModel={LandingSphere} modScale={[0.9, 0.9, 0.9]} />
         </li>
       </ul>
-    </div>
+    </motion.div>
   )
 }
