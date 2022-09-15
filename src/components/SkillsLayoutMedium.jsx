@@ -1,12 +1,11 @@
 import React from "react"
-import { motion } from "framer-motion"
 
 // Parent components for viewing 3d models.
 import SkillElement from "../components/3d-models/SkillElement"
 import ChosenSkill from "../components/3d-models/ChosenSkill"
 import LandingSphere from "../components/3d-models/LandingSphere"
 
-export default function SkillsLayoutMobile({
+export default function SkillsLayoutMedium({
   skillElements,
   setSkillElements,
 }) {
@@ -27,31 +26,61 @@ export default function SkillsLayoutMobile({
   let renderSkills = []
 
   if (skillElements.length > 0) {
+    // skillLength is the number of skills visible in the circle. Needed to determine
+    // accurate radians for circle layout radianStep variable.
+    let skillLength = skillElements.filter(
+      skill => skill.visible === true
+    ).length
+
+    // This basic math converts degrees into radians in order to give the
+    // circular layout effect.
+    let xOffset = 0
+    let yOffset = 0
+    let radius = 180
+    let radianAngle = 0
+    let radianStep = (2 * Math.PI) / skillLength
+
     skillElements.forEach((skill, i) => {
       if (skill.visible) {
+        xOffset = Math.round(radius * Math.cos(radianAngle))
+        yOffset = Math.round(radius * Math.sin(radianAngle))
         renderSkills.push(
           <SkillElement
-            width="75px"
-            height="75px"
+            width="100px"
+            height="100px"
             SkillModel={skill.skillModel}
             clickEvent={clickSkill}
             key={i}
             index={i}
             scale={[7, 7, 7]}
+            xOffset={xOffset}
+            yOffset={yOffset}
           />
         )
+        radianAngle += radianStep
       }
     })
   }
 
   return (
-    <motion.div animate={{ x: 0 }} className="port-skills-links">
-      <ul>
+    <div
+      style={{
+        width: "500px",
+        height: "500px",
+      }}
+      className="port-skills-links"
+    >
+      <ul className="circle-container">
         {renderSkills ? renderSkills : ""}
         <li className="landing-sphere">
-          <ChosenSkill SkillModel={LandingSphere} modScale={[0.9, 0.9, 0.9]} />
+          <ChosenSkill
+            width="250px"
+            height="250px"
+            SkillModel={LandingSphere}
+            modScale={[0.8, 0.8, 0.8]}
+          />
         </li>
       </ul>
-    </motion.div>
+    </div>
   )
 }

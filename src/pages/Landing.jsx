@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react"
 import Seo from "../components/Seo"
 import SkillsLayout from "../components/SkillsLayout"
+import SkillsLayoutMedium from "../components/SkillsLayoutMedium"
+import SkillsLayoutMobile from "../components/SkillsLayoutMobile"
 import useMediaQuery from "../components/utils/useMediaQuery"
 
 // Component for rendering 3d model for the chosen skill.
@@ -14,7 +16,13 @@ import * as ThreeModels from "../components/3d-models"
 import * as Skills from "../components/skills"
 
 export default function Landing() {
+  let chosenSkillSize
   const [screenWidth] = useState(useMediaQuery().width)
+  if (screenWidth > "1700") {
+    chosenSkillSize = "250px"
+  } else {
+    chosenSkillSize = "150px"
+  }
 
   const [chosenSkill, setChosenSkill] = useState({
     modelSrc: "",
@@ -130,26 +138,49 @@ export default function Landing() {
         description="I'm a full-stack web developer with experience working on multiple 
         different frameworks and platforms. Feel free to reach out!"
       />
-      <div className="row justify-content-center">
-        <SkillsLayout
-          skillElements={skillElements}
-          setSkillElements={setSkillElements}
-        />
+      <div className="landing-container">
+        {screenWidth >= "1700" ? (
+          <SkillsLayout
+            skillElements={skillElements}
+            setSkillElements={setSkillElements}
+          />
+        ) : (
+          ""
+        )}
+
+        {screenWidth >= "1024" && screenWidth < "1700" ? (
+          <SkillsLayoutMedium
+            skillElements={skillElements}
+            setSkillElements={setSkillElements}
+          />
+        ) : (
+          ""
+        )}
+
+        {screenWidth < "1024" ? (
+          <SkillsLayoutMobile
+            skillElements={skillElements}
+            setSkillElements={setSkillElements}
+          />
+        ) : (
+          ""
+        )}
         {chosenSkill.visible ? (
-          <div className="col-lg-6">
-            <div className="drop-skill">
-              <h2>{chosenSkill.skillName}</h2>
-              <div id="chosen-model">
-                <ChosenSkill
-                  key={chosenSkill.skillName}
-                  SkillModel={chosenSkill.skillModel}
-                  modScale={[7, 7, 7]}
-                />
-              </div>
-              <div className="skill-summary-scroll shadow-scrollwindow">
-                <h3>Skill Summary</h3>
-                {chosenSkill.skillComp}
-              </div>
+          <div className="drop-skill">
+            <h2>{chosenSkill.skillName}</h2>
+            <div id="chosen-model">
+              <ChosenSkill
+                width={chosenSkillSize}
+                height={chosenSkillSize}
+                key={chosenSkill.skillName}
+                SkillModel={chosenSkill.skillModel}
+                modScale={[7, 7, 7]}
+              />
+            </div>
+            <div className="skill-summary-scroll">
+              {/* Test with other device sizes ---> shadow-scrollwindow */}
+              <h3>Skill Summary</h3>
+              {chosenSkill.skillComp}
             </div>
           </div>
         ) : (

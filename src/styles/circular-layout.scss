@@ -1,16 +1,8 @@
-/// @param {Integer} $item-count - Number of items on the circle
-/// @param {Length} $circle-size - Large circle size
-/// @param {Length} $item-size - Single item size
-
 .port-skills-links {
   margin: 1em 0;
-  width: 800px;
-  height: 800px;
-  //margin-top: 1em;
 }
 
 .circle-container {
-  //$circle-size: 608px;
   width: inherit;
   height: inherit;
   margin: 0 auto;
@@ -32,5 +24,14 @@
 
   li {
     text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1700px) {
+  .circle-container {
+    > * {
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+    }
   }
 }

@@ -60,11 +60,19 @@ export default function SkillsLayout({ skillElements, setSkillElements }) {
   }
 
   return (
-    <div className="port-skills-links">
+    <div
+      style={{ width: "800px", height: "800px" }}
+      className="port-skills-links"
+    >
       <ul className="circle-container">
         {renderSkills ? renderSkills : ""}
         <li className="landing-sphere">
-          <ChosenSkill SkillModel={LandingSphere} modScale={[0.9, 0.9, 0.9]} />
+          <ChosenSkill
+            width="250px"
+            height="250px"
+            SkillModel={LandingSphere}
+            modScale={[0.9, 0.9, 0.9]}
+          />
         </li>
       </ul>
     </div>
