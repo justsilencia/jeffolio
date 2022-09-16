@@ -7,6 +7,7 @@ import ChosenSkill from "../components/3d-models/ChosenSkill"
 import LandingSphere from "../components/3d-models/LandingSphere"
 
 export default function SkillsLayoutMobile({
+  skillChosen,
   skillElements,
   setSkillElements,
 }) {
@@ -40,8 +41,8 @@ export default function SkillsLayoutMobile({
       if (skill.visible) {
         renderSkills.push(
           <SkillElement
-            width="75px"
-            height="75px"
+            width="120px"
+            height="120px"
             SkillModel={skill.skillModel}
             clickEvent={clickSkill}
             key={i}
@@ -55,18 +56,26 @@ export default function SkillsLayoutMobile({
 
   return (
     <div>
-      <motion.div ref={skillsCarousel} className="skills-carousel">
-        <motion.div
-          drag="x"
-          dragConstraints={{ right: 0, left: -carouselWidth }}
-          className="skills-slider-mobile"
-        >
-          <ul>{renderSkills ? renderSkills : ""}</ul>
+      <div className="carousel-shadow">
+        <motion.div ref={skillsCarousel} className="skills-carousel">
+          <motion.div
+            drag="x"
+            dragConstraints={{ right: 0, left: -carouselWidth }}
+            className="skills-slider-mobile"
+          >
+            <ul>{renderSkills ? renderSkills : ""}</ul>
+          </motion.div>
         </motion.div>
-      </motion.div>
-      <span>
-        <ChosenSkill SkillModel={LandingSphere} modScale={[0.9, 0.9, 0.9]} />
-      </span>
+      </div>
+      {skillChosen ? (
+        ""
+      ) : (
+        <div className="mt-5">
+          <span>
+            <ChosenSkill SkillModel={LandingSphere} modScale={[1, 1, 1]} />
+          </span>
+        </div>
+      )}
     </div>
   )
 }

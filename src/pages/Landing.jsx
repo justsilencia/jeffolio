@@ -159,6 +159,7 @@ export default function Landing() {
 
         {screenWidth < "1024" ? (
           <SkillsLayoutMobile
+            skillChosen={chosenSkill.visible}
             skillElements={skillElements}
             setSkillElements={setSkillElements}
           />

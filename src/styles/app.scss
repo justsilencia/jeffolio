@@ -32,6 +32,9 @@
   position: static;
   height: auto;
   width: 100%;
+  a {
+    padding-bottom: 6px;
+  }
 }
 
 .rep-link {
@@ -168,7 +171,6 @@
     width: 100%;
     a {
       margin: 0 auto;
-      padding-bottom: 8px;
       margin-bottom: 8px;
     }
   }
