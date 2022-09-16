@@ -45,13 +45,13 @@ export default function SkillsLayoutMobile({
   }
 
   return (
-    <motion.div animate={{ x: 0 }} className="port-skills-links">
-      <ul>
-        {renderSkills ? renderSkills : ""}
-        <li className="landing-sphere">
-          <ChosenSkill SkillModel={LandingSphere} modScale={[0.9, 0.9, 0.9]} />
-        </li>
-      </ul>
-    </motion.div>
+    <div>
+      <motion.div className="skills-slider-mobile">
+        <ul>{renderSkills ? renderSkills : ""}</ul>
+      </motion.div>
+      <span>
+        <ChosenSkill SkillModel={LandingSphere} modScale={[0.9, 0.9, 0.9]} />
+      </span>
+    </div>
   )
 }

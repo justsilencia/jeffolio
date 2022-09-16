@@ -5,6 +5,7 @@
 .landing-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .drop-skill {
@@ -56,6 +57,22 @@
   border-bottom-right-radius: 4px;
 }
 
+.skills-slider-mobile {
+  overflow: hidden;
+  width: 100vw;
+  height: 100px;
+  ul {
+    white-space: nowrap;
+    padding: 0;
+    list-style: none;
+    li {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+    }
+  }
+}
+
 @keyframes spin {
   to {
     transform: rotate(1turn);
@@ -90,6 +107,9 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .skill-summary {
+    font-size: 1em;
+  }
   .skill-summary-scroll {
     width: 100%;
     height: auto;
@@ -97,12 +117,18 @@
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1024px) {
   .skill-summary {
-    font-size: 1em;
+    font-size: 1.25em;
   }
   .skill-summary-scroll {
     width: 100%;
     height: auto;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .drop-skill {
+    width: 45%;
   }
 }
