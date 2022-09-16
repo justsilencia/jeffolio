@@ -29,8 +29,6 @@
     "react-burger-menu": "^3.0.8",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-laag": "^2.0.4",
-    "react-perfect-scrollbar": "^1.5.8",
     "react-rating": "^2.0.5",
     "sass": "^1.53.0",
     "styled-components": "^5.3.5",
