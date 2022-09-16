@@ -57,10 +57,12 @@
   border-bottom-right-radius: 4px;
 }
 
-.skills-slider-mobile {
+.skills-carousel {
   overflow: hidden;
   width: 100vw;
-  height: 100px;
+}
+
+.skills-slider-mobile {
   ul {
     white-space: nowrap;
     padding: 0;

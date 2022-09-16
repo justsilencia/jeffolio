@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 // Parent components for viewing 3d models.
@@ -10,6 +10,15 @@ export default function SkillsLayoutMobile({
   skillElements,
   setSkillElements,
 }) {
+  const [carouselWidth, setCarouselWidth] = useState(0)
+  const skillsCarousel = useRef()
+
+  useEffect(() => {
+    setCarouselWidth(
+      skillsCarousel.current.scrollWidth - skillsCarousel.current.offsetWidth
+    )
+  }, [])
+
   const clickSkill = index => {
     let skillArr = []
 
@@ -46,8 +55,14 @@ export default function SkillsLayoutMobile({
 
   return (
     <div>
-      <motion.div className="skills-slider-mobile">
-        <ul>{renderSkills ? renderSkills : ""}</ul>
+      <motion.div ref={skillsCarousel} className="skills-carousel">
+        <motion.div
+          drag="x"
+          dragConstraints={{ right: 0, left: -carouselWidth }}
+          className="skills-slider-mobile"
+        >
+          <ul>{renderSkills ? renderSkills : ""}</ul>
+        </motion.div>
       </motion.div>
       <span>
         <ChosenSkill SkillModel={LandingSphere} modScale={[0.9, 0.9, 0.9]} />
