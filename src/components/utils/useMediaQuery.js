@@ -4,10 +4,26 @@ import {
 } from 'react'
 
 export default function useMediaQuery() {
-    const [width, setWidth] = useState(window.innerWidth);
+
+    function getWidth() {
+        let screenWidth;
+        if (typeof window !== "undefined") {
+            screenWidth = window.innerWidth;
+        } else {
+            screenWidth = 1201;
+        }
+        return screenWidth;
+    }
+
+    let initialWidth = getWidth();
+
+    const [width, setWidth] = useState(initialWidth);
 
     useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth);
+        const handleWindowResize = () => {
+            let newWidth = getWidth();
+            setWidth(newWidth);
+        }
         window.addEventListener("resize", handleWindowResize);
         return () => window.removeEventListener("resize", handleWindowResize);
     }, []);
