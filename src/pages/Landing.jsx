@@ -131,6 +131,7 @@ export default function Landing() {
         different frameworks and platforms. Feel free to reach out!"
       />
       <div className="row justify-content-center">
+        <h1>{screenWidth}</h1>
         <SkillsLayout
           skillElements={skillElements}
           setSkillElements={setSkillElements}
