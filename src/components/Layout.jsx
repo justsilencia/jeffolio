@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       <CustNavbar />
       <main className="content-wrap" id="page-wrap">
         <SkillNetworks />
-        <div className="app container">{children}</div>
+        <div className="app container-xxl">{children}</div>
       </main>
     </div>
   )

@@ -1,114 +1,106 @@
-
 .port-home-container {
-    padding: 0 auto;
+  padding: 0 auto;
 }
 
 .port-skills-links {
-    margin-top: 4em;
+  margin-top: 1em;
 }
 
 .drop-skill {
-    text-align: center;
-    img {
-        width: 130px;
-    }
-    h3, h1 { color: black; font-family: Monsterat; }
-    #chosen-model { display: inline-block; }
+  text-align: center;
+  img {
+    width: 130px;
+  }
+  h3,
+  h1 {
+    color: black;
+    font-family: Monsterat;
+  }
+  #chosen-model {
+    display: inline-block;
+  }
 }
 
-
 .img-grow {
-    animation: grow 0.3s;
+  animation: grow 0.3s;
 }
 
 .skill-summary {
-    margin: 0 auto;
-    padding: 8px 1em;
-    font-size: 1.25em;
-    p, div {
-        font-family: SourceSansPro-Light;
-        text-align: justify;
-        text-indent: 30px;
-    }
-    .concepts {
-        color: black;
-        font-size: 1.2em;
-    }
+  margin: 0 auto;
+  padding: 8px 1em;
+  font-size: 1.25em;
+  p,
+  div {
+    font-family: SourceSansPro-Light;
+    text-align: justify;
+    text-indent: 30px;
+  }
+  .concepts {
+    color: black;
+    font-size: 1.2em;
+  }
 }
 
 .skill-summary-scroll {
-    width: 60%;
-    margin: 0 auto;
-    padding-top: 10px;
-    height: auto;
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 10px;
+  height: auto;
 }
 
 .shadow-scrollwindow {
-    box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4), inset 0 -5px 7px -5px rgba(0,0,0,0.3);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
-.landing-sphere {
-    top:  53% !important; 
-    left: 50% !important;
-    margin: -(calc(15em / 2)) !important;
+  box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.4),
+    inset 0 -5px 7px -5px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 @keyframes spin {
-    to { transform: rotate(1turn); }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 @keyframes grow {
-    from {
-        transform: scale(0);
-    }
-    70% {
-        transform: scale(1.1);
-        animation-timing-function: cubic-bezier(.1, .25, 1, .25);
-    }
+  from {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.1);
+    animation-timing-function: cubic-bezier(0.1, 0.25, 1, 0.25);
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .port-skills-links {
-        ul {
-            li {
-                img {
-                    width: 50px;
-                }
-            }
-        }
-    }
-    .skill-summary-scroll {
-        width: 100%;
-        height: auto;
-    }
+  .skill-summary-scroll {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .skill-summary-scroll {
-        width: 100%;
-        height: auto;
-    }
+  .skill-summary-scroll {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .skill-summary-scroll {
-        width: 100%;
-        height: auto;
-    }
+  .skill-summary-scroll {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .skill-summary-scroll {
-        width: 60%;
-        height: auto;
-    }
+  .skill-summary-scroll {
+    width: 60%;
+    height: auto;
+  }
 }
-
