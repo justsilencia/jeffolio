@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react"
 import Seo from "../components/Seo"
 import SkillsLayout from "../components/SkillsLayout"
-import useMediaQuery from "../components/utils/useMediaQuery"
+// import useMediaQuery from "../components/utils/useMediaQuery"
 
 // Component for rendering 3d model for the chosen skill.
 import ChosenSkill from "../components/3d-models/ChosenSkill"

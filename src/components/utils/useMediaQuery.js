@@ -1,18 +1,18 @@
-import {
-    useState,
-    useEffect
-} from 'react'
+// import {
+//     useState,
+//     useEffect
+// } from 'react'
 
-export default function useMediaQuery() {
-    const [width, setWidth] = useState(window.innerWidth);
+// export default function useMediaQuery() {
+//     const [width, setWidth] = useState(window.innerWidth);
 
-    useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth);
-        window.addEventListener("resize", handleWindowResize);
-        return () => window.removeEventListener("resize", handleWindowResize);
-    }, []);
+//     useEffect(() => {
+//         const handleWindowResize = () => setWidth(window.innerWidth);
+//         window.addEventListener("resize", handleWindowResize);
+//         return () => window.removeEventListener("resize", handleWindowResize);
+//     }, []);
 
-    return {
-        width
-    };
-}
+//     return {
+//         width
+//     };
+// }
