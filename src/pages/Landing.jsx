@@ -14,7 +14,7 @@ import * as ThreeModels from "../components/3d-models"
 import * as Skills from "../components/skills"
 
 export default function Landing() {
-  const [screenWidth] = useState(useMediaQuery().width)
+  //  const [screenWidth] = useState(useMediaQuery().width)
 
   const [chosenSkill, setChosenSkill] = useState({
     modelSrc: "",
