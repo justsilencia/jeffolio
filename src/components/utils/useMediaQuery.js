@@ -5,30 +5,42 @@ import {
 
 export default function useMediaQuery() {
 
-    function getWidth() {
+    const [windowSize, setWindowSize] = useState({
+        width: 0,
+        height: 0
+    });
+
+    const [initialRender, setInitialRender] = useState(false);
+
+    function getWindowSize() {
         let screenWidth;
         if (typeof window !== "undefined") {
             screenWidth = window.innerWidth;
         } else {
             screenWidth = 1201;
         }
-        return screenWidth;
+        return {
+            width: screenWidth,
+            height: 0
+        };
     }
 
-    let initialWidth = getWidth();
-
-    const [width, setWidth] = useState(initialWidth);
-
     useEffect(() => {
-        const handleWindowResize = () => {
-            let newWidth = getWidth();
-            setWidth(newWidth);
-        }
-        window.addEventListener("resize", handleWindowResize);
-        return () => window.removeEventListener("resize", handleWindowResize);
-    }, []);
+        let initialSize;
+        if (initialRender === false) {
+            initialSize = getWindowSize();
+            setWindowSize(initialSize);
+            setInitialRender(true);
 
-    return {
-        width
-    };
+            const handleWindowResize = () => {
+                let newSize = getWindowSize();
+                setWindowSize(newSize);
+            }
+            window.addEventListener("resize", handleWindowResize);
+            return () => window.removeEventListener("resize", handleWindowResize);
+        }
+
+    }, []);
+    console.log(windowSize)
+    return windowSize
 }

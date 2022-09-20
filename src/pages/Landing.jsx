@@ -4,7 +4,7 @@ import Seo from "../components/Seo"
 import SkillsLayout from "../components/SkillsLayout"
 import SkillsLayoutMedium from "../components/SkillsLayoutMedium"
 import SkillsLayoutMobile from "../components/SkillsLayoutMobile"
-import useMediaQuery from "../components/utils/useMediaQuery"
+//import useMediaQuery from "../components/utils/useMediaQuery"
 
 // Component for rendering 3d model for the chosen skill.
 import ChosenSkill from "../components/3d-models/ChosenSkill"
@@ -16,8 +16,9 @@ import * as ThreeModels from "../components/3d-models"
 import * as Skills from "../components/skills"
 
 export default function Landing() {
+  const [screenWidth, setScreenWidth] = useState(0)
   let chosenSkillSize
-  const [screenWidth] = useState(useMediaQuery().width)
+
   if (screenWidth > "1700") {
     chosenSkillSize = "250px"
   } else {
@@ -115,6 +116,26 @@ export default function Landing() {
   // This effect checks for a change in the skillElements state array in order
   // to keep the chosenSkill state up to date. The skill that is not visible
   // is the chosen skill.
+
+  useEffect(() => {
+    function getWidth() {
+      let screenWidth
+      if (typeof window !== "undefined") {
+        screenWidth = window.innerWidth
+      } else {
+        screenWidth = 1201
+      }
+      return screenWidth
+    }
+    setScreenWidth(getWidth())
+    const handleWindowResize = () => {
+      let newSize = getWidth()
+      setScreenWidth(newSize)
+    }
+    window.addEventListener("resize", handleWindowResize)
+    return () => window.removeEventListener("resize", handleWindowResize)
+  }, [])
+
   useEffect(() => {
     const chosenSkill = skillElements.filter(
       skill => skill.visible === false
