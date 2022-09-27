@@ -72,7 +72,11 @@ export default function SkillsLayoutMobile({
       ) : (
         <div className="mt-5">
           <span>
-            <ChosenSkill SkillModel={LandingSphere} modScale={[1, 1, 1]} />
+            <ChosenSkill
+              height="300px"
+              SkillModel={LandingSphere}
+              modScale={[0.8, 0.8, 0.8]}
+            />
           </span>
         </div>
       )}
