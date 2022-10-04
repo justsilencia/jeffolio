@@ -61,11 +61,13 @@ class DevStory extends Component {
                     Initial Commit LLC
                   </a>
                   &nbsp;-&nbsp;
-                  <span style={{ color: "black" }}>
-                    Initial Commit is a blog with various learning resources
-                    related to the programming field. I wrote multiple technical
-                    articles for them relating to the Git version control
-                    system.
+                  <span>
+                    <em>
+                      Initial Commit is a blog with various learning resources
+                      related to the programming field. I wrote multiple
+                      technical articles for them relating to the Git version
+                      control system.
+                    </em>
                   </span>
                 </li>
                 <li>
@@ -74,11 +76,14 @@ class DevStory extends Component {
                     OhMyCrawl
                   </a>
                   &nbsp;-&nbsp;
-                  <span style={{ color: "black" }}>
-                    OhMyCrawl is an SEO consulting company that specializes in
-                    technical SEO with an emphasis on React single-page
-                    applications. I wrote multiple articles for them relating to
-                    React and React metaframeworks such as GatsbyJs and NextJs.
+                  <span>
+                    <em>
+                      OhMyCrawl is an SEO consulting company that specializes in
+                      technical SEO with an emphasis on React single-page
+                      applications. I wrote multiple articles for them relating
+                      to React and React metaframeworks such as GatsbyJs and
+                      NextJs.
+                    </em>
                   </span>
                 </li>
               </ul>

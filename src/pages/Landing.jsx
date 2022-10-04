@@ -1,5 +1,5 @@
 // Standard components.
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import Seo from "../components/Seo"
 import SkillsLayout from "../components/SkillsLayout"
 import SkillsLayoutMedium from "../components/SkillsLayoutMedium"
@@ -159,55 +159,63 @@ export default function Landing() {
         description="I'm a full-stack web developer with experience working on multiple 
         different frameworks and platforms. Feel free to reach out!"
       />
-      <div className="landing-container">
-        {screenWidth >= "1700" ? (
-          <SkillsLayout
-            skillElements={skillElements}
-            setSkillElements={setSkillElements}
-          />
-        ) : (
-          ""
-        )}
+      <div className="landing-flex">
+        <div
+          className={
+            chosenSkill.visible
+              ? "landing-container skill-blur"
+              : "landing-container"
+          }
+        >
+          {screenWidth >= "1700" ? (
+            <SkillsLayout
+              skillElements={skillElements}
+              setSkillElements={setSkillElements}
+            />
+          ) : (
+            ""
+          )}
 
-        {screenWidth >= "1024" && screenWidth < "1700" ? (
-          <SkillsLayoutMedium
-            skillElements={skillElements}
-            setSkillElements={setSkillElements}
-          />
-        ) : (
-          ""
-        )}
+          {screenWidth >= "1024" && screenWidth < "1700" ? (
+            <SkillsLayoutMedium
+              skillElements={skillElements}
+              setSkillElements={setSkillElements}
+            />
+          ) : (
+            ""
+          )}
 
-        {screenWidth < "1024" ? (
-          <SkillsLayoutMobile
-            skillChosen={chosenSkill.visible}
-            skillElements={skillElements}
-            setSkillElements={setSkillElements}
-          />
-        ) : (
-          ""
-        )}
-        {chosenSkill.visible ? (
-          <div className="drop-skill">
-            <h2>{chosenSkill.skillName}</h2>
-            <div id="chosen-model">
-              <ChosenSkill
-                width={chosenSkillSize}
-                height={chosenSkillSize}
-                key={chosenSkill.skillName}
-                SkillModel={chosenSkill.skillModel}
-                modScale={[7, 7, 7]}
-              />
+          {screenWidth < "1024" ? (
+            <SkillsLayoutMobile
+              skillChosen={chosenSkill.visible}
+              skillElements={skillElements}
+              setSkillElements={setSkillElements}
+            />
+          ) : (
+            ""
+          )}
+          {chosenSkill.visible ? (
+            <div className="drop-skill">
+              <h2>{chosenSkill.skillName}</h2>
+              <div id="chosen-model">
+                <ChosenSkill
+                  width={chosenSkillSize}
+                  height={chosenSkillSize}
+                  key={chosenSkill.skillName}
+                  SkillModel={chosenSkill.skillModel}
+                  modScale={[7, 7, 7]}
+                />
+              </div>
+              <div className="skill-summary-scroll">
+                {/* Test with other device sizes ---> shadow-scrollwindow */}
+                <h3>Skill Summary</h3>
+                {chosenSkill.skillComp}
+              </div>
             </div>
-            <div className="skill-summary-scroll">
-              {/* Test with other device sizes ---> shadow-scrollwindow */}
-              <h3>Skill Summary</h3>
-              {chosenSkill.skillComp}
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </>
   )

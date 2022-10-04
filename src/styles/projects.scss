@@ -1,16 +1,21 @@
-
 .projects {
-    p, div {
-        a {
-            color: #AAD4FF;
-            font-weight: bold;
-        }
-        a:hover { text-decoration: none;}
-        text-align: justify;
-        text-indent: 30px;
+  p,
+  div {
+    a {
+      color: rgb(126, 241, 126);
+      font-weight: bold;
     }
+    a:hover {
+      text-decoration: none;
+    }
+    text-align: justify;
+    text-indent: 30px;
+  }
 
-    span {
-        h2, h3 {color: black;}
+  span {
+    h2,
+    h3 {
+      color: black;
     }
+  }
 }

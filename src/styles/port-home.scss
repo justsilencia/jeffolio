@@ -2,10 +2,16 @@
   padding: 0 auto;
 }
 
-.landing-container {
+.landing-flex {
   display: flex;
   justify-content: center;
+}
+
+.landing-container {
+  display: inline-flex;
+  justify-content: center;
   flex-wrap: wrap;
+  padding: 1em;
 }
 
 .drop-skill {

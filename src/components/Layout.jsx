@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import SkillNetworks from "./SkillNetworks"
 import CustNavbar from "./nav/CustNavbar"
 import "../styles/index.scss"
@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       <CustNavbar />
       <main className="content-wrap" id="page-wrap">
         <SkillNetworks />
-        <div className="app container-xxl">{children}</div>
+        <div>{children}</div>
       </main>
     </div>
   )

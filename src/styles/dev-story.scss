@@ -1,45 +1,47 @@
-
-
 .dev-story ul {
-    list-style: none;
-    margin: 10px 10px 20px 40px;
-    li {
-        list-style-position: inside;
-        text-indent: -1em;
-    }
-    a {
-        color: orange;
-    }
+  list-style: none;
+  margin: 10px 10px 20px 40px;
+  li {
+    list-style-position: inside;
+    text-indent: -1em;
+  }
+  a {
+    color: rgb(126, 241, 126);
+  }
 }
 
 .time-frame {
-    font-size: 1.5em;
+  font-size: 1.5em;
+  color: black;
+  h1,
+  h2 {
     color: black;
-    h1, h2 { color: black; display: inline; }
-    svg path {
-        color: $themegreen3;
-    }
+    display: inline;
+  }
+  svg path {
+    color: $themegreen3;
+  }
 }
 
 .btn-story-img {
-    color: black;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 10px 15px;
-    background: $themegreen3;
-    border-radius: 4px;
-    transition: all .3s ease-in-out;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  background: $themegreen3;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-story-img:hover {
-    background: darkgray;
+  background: darkgray;
 }
 
 .story-img {
-    opacity: 0;
-    position: absolute;
-    left: -999em;
-    transition: opacity .3s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  left: -999em;
+  transition: opacity 0.3s ease-in-out;
 }
 
 #imgCheck1:checked + .story-img,
@@ -48,7 +50,7 @@
 #imgCheck4:checked + .story-img,
 #imgCheck5:checked + .story-img,
 #imgCheck6:checked + .story-img {
-    position: static;
-    padding-right: 5px;
-    opacity: 1;
+  position: static;
+  padding-right: 5px;
+  opacity: 1;
 }
