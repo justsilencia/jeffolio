@@ -5,14 +5,10 @@ const NextJs = () => {
     <>
       <div className="skill-summary">
         <p>
-          Like most new techs, I took a project oriented approach to learning
-          Next. I wanted to start getting a feel for Web3 development, so I used
-          NextJs to build a prototype for a cryptocurrency based startup idea
-          that I was toying around with.
-        </p>
-        <p>
-          Although this project never made it to completion, I learned a lot
-          about NextJs and how to use it to build performant web apps.
+          As with most new technologies, I took a project oriented approach to
+          learning Next. I wanted to start getting a feel for Web3 development,
+          so I used NextJs to build a prototype for a cryptocurrency based
+          startup idea that I was toying around with.
         </p>
         <p>
           Overall, I think NextJs is a great framework for SSR or SSG React
@@ -22,6 +18,7 @@ const NextJs = () => {
           <span className="concepts">Familiar Concepts</span>
           <ul>
             <li>SSG / SSR</li>
+            <li>getServerSideProps() vs getStaticProps()</li>
             <li>Isomorphic React</li>
             <li>Next Image Optimization</li>
             <li>SEO Benefits of SSG vs SSR</li>

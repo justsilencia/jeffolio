@@ -8,11 +8,11 @@ const Reactjs = () => {
     <>
       <div className="skill-summary">
         <p>
-          I started programming with react
-          {timeElapsed(startDate, "")}, and I definitely consider myself up to
-          par. React is my second highest scoring tag on Stackoverflow (top 10%
-          overall), and I've published a minimalistic emoji enabled textarea
-          component on npm.
+          I started developing with react
+          {timeElapsed(startDate, "")}, and since then it has been my framework
+          of choice. React is my second highest scoring tag on Stackoverflow
+          (top 10% overall), and I've published a minimalistic emoji enabled
+          textarea component on npm.
         </p>
         <p>
           I've developed multiple SPAs with react and React meta frameworks,
@@ -24,9 +24,9 @@ const Reactjs = () => {
           <ul>
             <li>State Management</li>
             <li>Component Lifecycle</li>
-            <li>Code Splitting</li>
             <li>Isomorphic React</li>
             <li>Hooks</li>
+            <li>SEO related issues with SPAs</li>
           </ul>
         </div>
       </div>

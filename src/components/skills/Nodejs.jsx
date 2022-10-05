@@ -9,13 +9,9 @@ const Nodejs = () => {
       <div className="skill-summary">
         <p>
           I've been working with node since roughly {timeElapsed(startDate, "")}
-          . I use it mainly for web development, but have also tinkered with
-          other obscure uses like automation tasks and web scraping.
-        </p>
-        <p>
-          I've enjoyed working with Node from the moment I typed in my first
-          <em> npm i</em> command into the terminal. The ever evolving library
-          of open-source modules makes for a great way to do business.
+          . I use it mainly for web development while leveraging frameworks like
+          Express, but have also tinkered with other obscure uses like
+          automation tasks and web scraping.
         </p>
         <div>
           <span className="concepts">Familiar Concepts</span>
