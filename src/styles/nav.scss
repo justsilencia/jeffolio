@@ -1,0 +1,136 @@
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+/* Main theme colors */
+
+$themeblue: #659dbd;
+$themetan: #daad86;
+$themebrown: #bc986a;
+$themeoffwhite: #fbeec1;
+$themegreen1: #8d8741;
+$themegreen2: #697739;
+$themegreen3: #b4c195;
+
+/* End main theme colors */
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 54px;
+  top: 54px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: $themegreen3;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: $themeoffwhite;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #fff;
+}
+
+/*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: $themegreen3;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+.bm-item-list a span {
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+/* Individual item */
+.bm-item {
+  font-size: 1em;
+}
+
+.bm-item:hover {
+  text-decoration: none !important;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(255, 255, 255, 0) !important;
+}
+
+/* Styling for menu links/items */
+.bm-item-list h2 {
+  font-size: 2em;
+  margin: 0 auto;
+  padding: 1.5em 10px;
+  color: rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
+  span {
+    margin-left: 10px;
+  }
+}
+
+.bm-item-list a {
+  padding: 1em;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
+}
+
+.bm-item-list a:hover {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0);
+  color: #b8b7ad;
+}
+
+@media only screen and (max-width: 750px) {
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 30px;
+    top: 24px;
+  }
+}
