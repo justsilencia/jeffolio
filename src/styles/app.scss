@@ -1,9 +1,16 @@
-* {
-  color: $white;
+@font-face {
+  font-family: Monsterat;
+  src: url("fonts/MontserratAlternates-Regular.woff2") format("woff2");
 }
 
-.app {
-  margin-top: 0;
+@font-face {
+  font-family: SourceSansPro-Reg;
+  src: url("fonts/SourceSansPro-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: SourceSansPro-Light;
+  src: url("fonts/SourceSansPro-Light.woff2") format("woff2");
 }
 
 .hide {
@@ -48,9 +55,6 @@
   height: auto;
   width: 100%;
   margin-bottom: 1em;
-  a {
-    padding-bottom: 6px;
-  }
 }
 
 .rep-link {
@@ -145,7 +149,7 @@
   }
   .review-date {
     font-family: "SourceSansPro-Reg" !important;
-    font-size: 0.65em;
+    font-size: 0.6em;
   }
 }
 

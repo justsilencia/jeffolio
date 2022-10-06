@@ -9,6 +9,8 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import "../../styles/color-scheme.scss"
+import "../../styles/nav.scss"
 
 class CustNavbar extends Component {
   render() {

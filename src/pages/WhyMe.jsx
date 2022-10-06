@@ -7,7 +7,7 @@ const WhyMe = () => {
     <Layout>
       <Seo title="Why hire me?" />
       <div className="desc-box shadow-scrollwindow">
-        <div className="p-3">
+        <div className="whyme">
           <h1>Why Me?</h1>
           <p>
             At some point, every potential employer must ask themselves: "Why

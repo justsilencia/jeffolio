@@ -31,7 +31,7 @@ class Projects extends Component {
       <Layout>
         <Seo title="My Projects" />
         <div className="desc-box shadow-scrollwindow">
-          <div className="projects p-3">
+          <div className="projects">
             <h1>Projects</h1>
             <p>
               I've developed or helped develop countless projects. Here, I've
