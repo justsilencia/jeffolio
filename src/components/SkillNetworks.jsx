@@ -56,9 +56,7 @@ const SkillNetworks = () => {
           href="https://github.com/justsilencia/folio"
         >
           <div className="flex-link">
-            <div>
-              <img alt="GIT logo." src="/images/git.png" />
-            </div>
+            <img alt="GIT logo." src="/images/git.png" />
             <div style={{ marginLeft: "5px" }}>Github Repositories</div>
           </div>
         </a>
