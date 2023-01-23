@@ -8,14 +8,13 @@ const Layout = ({ children }) => {
   return (
     <div className="content-outer" id="outer-container">
       <Helmet>
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+        <meta name="robots" content="noindex" />
       </Helmet>
       <CustNavbar />
       <main className="content-wrap" id="page-wrap">
         <SkillNetworks />
         <div>{children}</div>
       </main>
-      <script type="text/javascript" src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=f0229c5059616820b7038aeb0c2cee85fb7bd896"></script>
     </div>
   )
 }
