@@ -14,32 +14,36 @@ const WhyMe = () => {
             should I hire you over the next guy?"
           </p>
           <p>
-            In answer to this question, I believe I'm a unique prospect for
-            several reasons. Although I've been developing full-stack for almost
-            10 years, I'd happily join any team as a junior/mid-level developer.
+            The convergence of technology and marketing is more crucial than ever. 
+            As a full-stack developer with a robust expertise in ReactJS, NodeJS, CSS, 
+            SQL, and a suite of other technologies, I possess a unique ability to bridge 
+            the gap between creative vision and technical execution. My experience 
+            not only encompasses developing seamless user experiences but also extends 
+            to crafting compelling digital marketing strategies.
           </p>
           <p>
-            It may seem as though I'm selling myself short, but that's not the
-            case at all. I think highly of my value as a developer, however I
-            also realize that I've never worked with a group of experienced
-            professionals who work as a team to complete real world projects.
+            What sets me apart is my ability to think creatively at the intersection of 
+            technology and marketing. I approach challenges with an innovative mindset, 
+            leveraging my diverse skill set to deliver solutions that are not only effective 
+            but also imaginative. I thrive in collaborative environments where I can contribute 
+            fresh ideas and strategies, ensuring that projects achieve their fullest potential.
           </p>
           <p>
-            For this reason, I'm willing to be hired on as a developer in any
-            capacity. I like to think I make for a great cost/benefit outlook
-            when considering this perspective.
+            I am passionate about staying ahead of industry trends and continuously honing my skills. 
+            This commitment to excellence ensures that I deliver high-quality work that meets the evolving 
+            needs of businesses and their customers. By choosing to work with me, you gain a partner who 
+            is dedicated to driving results through a balanced approach of technical expertise and creative 
+            insight.
           </p>
           <p>
-            I'd like to mention as a sidenote that, although I've never worked
-            with a group of developers, I'm very easy to work with and I've
-            performed well with teams in the past. Working in an education
-            department for 10 years in a pretty tough environment, I coached
-            small teams of clerks while creating a more efficient workflow.
+            If you're looking for a creative employee who can bring a broad skill set to your team, I invite you 
+            to explore how we can collaborate to achieve your digital goals. Together, we can craft solutions that 
+            not only meet technical specifications but also engage and inspire your audience.
           </p>
           <p>
             My goal is to grow as a developer and as a person, but also to
             fullfil and exceed the needs of my employer. Doing what I love for a
-            living is a luxury few get to experience; the prospect is exciting.
+            living is a luxury few get to experience; it's something I never forget to appreciate.
           </p>
         </div>
       </div>
